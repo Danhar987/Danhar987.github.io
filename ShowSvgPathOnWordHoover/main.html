@@ -1,0 +1,58 @@
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<title>test side to show what the script can do</title>
+		<link href="Style.css" rel="stylesheet">
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="script.js" async></script>
+		<header>
+			<p>test side to show what the script can do</p>
+		</header>
+		<main>
+			<article>
+				<h1>Settings and Results</h1>
+				<p>In Panel Preferences you can find the settings <mark class="target" data-target="GeomSet">Geometry</mark>, <mark class="target" data-target="AppearSet">Appearance</mark>, <mark class="target" data-target="ApplSet">Panel Applets</mark> and <mark class="target" data-target="AdvSet">Advanced</mark>.</p>
+				<p>At <mark class="target" data-target="GeomSet">Geometry</mark> you can define the <mark class="target" data-target="PanelPos">panel positions</mark> <mark class="setting" data-target="PosBottom">Bottom</mark>, <mark class="setting" data-target="PosTop">Top</mark>, <mark class="setting" data-target="PosLeft">Left</mark> and <mark class="setting" data-target="PosRight">Right</mark>.</p>
+				<p>...</p>
+				<p>... so you can also define the <mark class="setting" data-target="IconSize">icon size</mark> independent to the <mark class="setting" data-target="PanelHeight">panel height</mark>.</p>
+				<p><svg width="880" height="328">
+					<image xlink:href="PanelPrefs.png" />
+					<path class="SvgT" id="GeomSet"
+							d="M 6,22 C 6,22 64,22 64,22 64,22 64,42 64,42 64,42 6,42 6,42 6,42 6,22 6,22 Z" />
+					<path class="SvgT" id="AppearSet"
+							d="M 63,22 C 63,22 131,22 131,22 131,22 131,42 131,42 131,42 63,42 63,42 63,42 63,22 63,22 Z" />
+					<path class="SvgT" id="ApplSet"
+							d="M 130,22 C 130,22 207,22 207,22 207,22 207,42 207,42 207,42 130,42 130,42 130,42 130,22 130,22 Z" />
+					<path class="SvgT" id="AdvSet"
+							d="M 206,22 C 206,22 262,22 262,22 262,22 262,42 262,42 262,42 206,42 206,42 206,42 206,22 206,22 Z" />
+					<path class="SvgT" id="PanelPos"
+							d="M 30,59 C 30,59 131,59 131,59 131,59 131,120 131,120 131,120 30,120 30,120 30,120 30,59 30,59 Z" />
+					<path class="SvgS" id="PosBottom"
+							d="M 73,59 C 73,59 132,59 132,59 132,59 132,74 132,74 132,74 73,74 73,74 73,74 73,59 73,59 Z
+								M 0,276 C 0,276 380,276 380,276 380,276 380,308 380,308 380,308 0,308 0,308 0,308 0,276 0,276 Z" />
+					<path class="SvgS" id="PosTop"
+							d="M 0,0 C 0,0 380,0 380,0 380,0 380,32 380,32 380,32 0,32 0,32 0,32 0,0 0,0 Z
+								M 73,75 C 73,75 110,75 110,75 110,75 110,89 110,89 110,89 73,89 73,89 73,89 73,75 73,75 Z" />
+					<path class="SvgS" id="PosLeft"
+							d="M 0,0 C 0,0 69,0 69,0 69,0 69,308 69,308 69,308 0,308 0,308 0,308 0,0 0,0 Z
+								M 73,90 C 73,90 113,90 113,90 113,90 113,103 113,103 113,103 73,103 73,103 73,103 73,90 73,90 Z" />
+					<path class="SvgS" id="PosRight"
+							d="M 307,0 C 307,0 380,0 380,0 380,0 380,307 380,307 380,307 307,307 307,307 307,307 307,0 307,0 Z
+								M 73,105 C 73,105 118,105 118,105 118,105 118,119 118,119 118,119 73,119 73,119 73,119 73,105 73,105 Z" />
+					<path class="SvgS" id="PanelHeight"
+							d="M 149,82 C 149,82 235,82 235,82 235,82 235,105 235,105 235,105 149,105 149,105 149,105 149,82 149,82 Z
+								M 200,328 C 200,328 200,247 200,247
+								M 197,255 C 197,255 200,267 200,267 200,267 203,255 203,255
+								M 197,321 C 197,321 200,308 200,308 200,308 203,321 203,321" />
+					<path class="SvgS" id="IconSize"
+							d="M 156,157 C 156,157 234,157 234,157 234,157 234,180 234,180 234,180 156,180 156,180 156,180 156,157 156,157 Z
+								M 48,256 C 48,256 48,313 48,313
+								M 45,266 C 45,266 48,278 48,278 48,278 51,266 51,266
+								M 51,305 C 51,305 48,293 48,293 48,293 45,305 45,305" />
+				</svg></p>
+			</article>
+		</main>
+	</body>
+</html>
