@@ -1,0 +1,111 @@
+<html lang="de">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<title>Werkzeug-Spitzenpunkte</title>
+		<link href="../css/Style.css" rel="stylesheet">
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- <script src="../js/main.js" async></script> -->
+		<script src="https://danhar987.github.io/WordToSVGLink.js" async></script>
+		<header>
+			<p id="top">Werkzeugverwaltung - Besonderheiten bei Postprozessoren für die Mazak INTEGREX-Serie</p>
+		</header>
+		<main>
+			<article>
+				<h1>Schneiden-Nullpunkt</h1>
+				<p>Um den Schneiden-Nullpunkt korrekt festlegen zu können, sollte vorher die <a href="tool_slope.html">Werkzeug-Ausrichtung</a> korrekt definiert sein.</p>
+				<p>Für Standard-Drehwerkzeuge ist dann der Schneiden-Nullpunkt in der Regel bereits korrekt vorgegeben, wogegen für Gewinde-Stähle sowie für Einstech-Werkzeuge ggf. Anpassungen notwendig sind. Um Einfluss auf den vorgegebenen Schneiden-Nullpunkt nehmen zu können muss der Haken bei <mark class="setting" data-target="i14NosePntAct">Nullpunkt</mark> gesetzt werden.</p>
+				<p>Abhängig von Werkzeug-Typ und Platten-Form kann der <mark class="setting" data-target="i14CornerSelect">Radius</mark> ausgewählt werden, an dem das Werkzeug vermessen wurde bzw. auf den sich die Korrektur-Versatzwerte eines Werkzeuges beziehen.<br>
+					So kann z.B. für eine Schrupp-Platte - Form C jeder der 4 möglichen Plattenradien angewählt werden, für Einstech-Werkzeuge sind dagegen - ausgenommen Vollradius-Platten - 2 Plattenradien wählbar.<p> 
+				<p>Bezogen auf den angewählten Schneidenradius kann anschließend der <mark class="setting" data-target="i14NosePntSelect">Quadranten-Punkt</mark> bestimmt werden. Der aktuell angewählte Quadranten-Punkt wird auch als <mark class="setting" data-target="i14NumNosePntDef">Versatzwerte</mark> relativ zum Radienzentrum angezeigt.</p>
+				<p><svg width="844" height="724">
+						<image xlink:href="../img/14NosePointSettings.png" />
+						<rect class="SvgS" id="i14NosePntAct" x="289" y="168" width="69" height="21" />
+						<rect class="SvgS" id="i14CornerSelect" x="414" y="195" width="64" height="25" />
+						<rect class="SvgS" id="i14NosePntSelect" x="309" y="241" width="155" height="155" />
+						<rect class="SvgS" id="i14NumNosePntDef" x="288" y="417" width="501" height="26" />
+					</svg></p>
+				<p>Definiert keiner der Quadranten-Punkte den Vermessungspunkt, wie z.B. bei einem Gewinde-Stahl, können die <mark class="setting" data-target="i15NumNosePntDef">Versatzwerte</mark> auch direkt angegeben werden. Durch die Wert-Änderung wird in der <mark class="setting" data-target="i15NosePntSelect">Quadranten-Punkt-Auswahl</mark> immer der den aktuellen Versatzwerten naheliegenste Quadranten-Punkt angezeigt.</p>
+				<p>Zur Kontrolle des gewählten Quadranten-Punktes bzw. der angegebenen Versatzwerte kann auch die <mark class="result" data-target="i15ToolPreview">Werkzeug-Vorschau</mark> zur Hilfe genommen werden.<br>
+					Dabei ist zu beachten, dass die Ansicht in der Werkzeugvorschau frei verändert werden kann, wodurch die <mark class="result" data-target="i15HomePos">Ausrichtung der Werkzeug-Vorschau</mark> nur selten mit der <mark class="result" data-target="i15NosePntOri">Ausrichtung der Quadranten-Punkt-Auswahl</mark> übereinstimmt. Dennoch kann damit die <mark class="setting" data-target="i15NosePntPreview">korrekte Lage</mark> des gewählten Punktes überprüft werden.</p>
+				<p><svg width="1412" height="722">
+						<image xlink:href="../img/15NosePointSettings.png" />
+						<rect class="SvgS" id="i15NosePntAct" x="288" y="167" width="69" height="21" />
+						<rect class="SvgS" id="i15CornerSelect" x="413" y="194" width="64" height="25" />
+						<rect class="SvgS" id="i15NosePntSelect" x="308" y="240" width="155" height="155" />
+						<rect class="SvgS" id="i15NumNosePntDef" x="287" y="416" width="501" height="26" />
+						<path class="SvgR" id="i15ToolPreview"
+							d="M 757,54
+								C 757,54 795,54 795,54
+								795,54 795,92 795,92
+								795,92 757,92 757,92
+								757,92 757,54 757,54 Z
+								M 840,722
+								C 840,722 1412,722 1412,722
+								1412,722 1412,0 1412,0
+								1412,0 840,0 840,0
+								840,0 840,722 840,722" />
+						<path class="SvgR" id="i15HomePos"
+							d="M 1045.5,343.5
+								C 1045.5,346.26 1043.26,348.5 1040.5,348.5
+								1037.74,348.5 1035.5,346.26 1035.5,343.5
+								1035.5,340.74 1037.74,338.5 1040.5,338.5
+								1043.26,338.5 1045.5,340.74 1045.5,343.5 Z
+								M 1045.5,341.5
+								C 1045.5,341.5 1089.5,341.5 1089.5,341.5
+								1089.5,341.5 1089.5,338.5 1089.5,338.5
+								1089.5,338.5 1109.5,343.5 1109.5,343.5
+								1109.5,343.5 1089.5,348.5 1089.5,348.5
+								1089.5,348.5 1089.5,345.5 1089.5,345.5
+								1089.5,345.5 1045.5,345.5 1045.5,345.5
+								1045.5,345.5 1045.5,341.5 1045.5,341.5 Z
+								M 1042.5,348.5
+								C 1042.5,348.5 1042.5,392.5 1042.5,392.5
+								1042.5,392.5 1045.5,392.5 1045.5,392.5
+								1045.5,392.5 1040.5,412.5 1040.5,412.5
+								1040.5,412.5 1035.5,392.5 1035.5,392.5
+								1035.5,392.5 1038.5,392.5 1038.5,392.5
+								1038.5,392.5 1038.5,348.5 1038.5,348.5
+								1038.5,348.5 1042.5,348.5 1042.5,348.5 Z" />
+						<path class="SvgR" id="i15NosePntOri"
+							d="M 386.5,313
+								C 389.26,313 391.5,315.24 391.5,318
+								391.5,320.76 389.26,323 386.5,323
+								383.74,323 381.5,320.76 381.5,318
+								381.5,315.24 383.74,313 386.5,313 Z
+								M 384.5,313
+								C 384.5,313 384.5,269 384.5,269
+								384.5,269 381.5,269 381.5,269
+								381.5,269 386.5,249 386.5,249
+								386.5,249 391.5,269 391.5,269
+								391.5,269 388.5,269 388.5,269
+								388.5,269 388.5,313 388.5,313
+								388.5,313 384.5,313 384.5,313 Z
+								M 391.5,316
+								C 391.5,316 435.5,316 435.5,316
+								435.5,316 435.5,313 435.5,313
+								435.5,313 455.5,318 455.5,318
+								455.5,318 435.5,323 435.5,323
+								435.5,323 435.5,320 435.5,320
+								435.5,320 391.5,320 391.5,320
+								391.5,320 391.5,316 391.5,316 Z" />
+						<path class="SvgS" id="i15NosePntPreview"
+							d="M 1029.5,245.5
+								C 1029.5,245.5 1029.5,374.5 1029.5,374.5
+								M 1014.5,260.5
+								C 1014.5,260.5 1193.5,260.5 1193.5,260.5" />
+					</svg></p>
+			</article>
+		</main>
+		<nav class="TOC">
+			<a href="../main.html"><b>Start</b></a><br>
+			<ul><li><a href="tool_predefinitions.html" title="Enthält allgemeine Informationen zu den vordefinierbaren Werten">Vordefinition von Dreh-Werkzeugen</a>
+					<ul><li><a href="tool_slope.html" title="Erläutert die, für die Werkzeugausrichtung im Schwenkkopf, nötigen Werte">Werkzeug-Ausrichtung <b>B-Achse</b></a></li>
+						<li><a href="turret_tool_ori.html" title="Erläutert die, für die Werkzeugausrichtung im Revolver, nötigen Werte">Werkzeug-Ausrichtung <b>Revolver</b></a></li>
+						<li><a class="curr">Schneiden-Nullpunkt</a>
+							<ul><li><a href="example_nose_points.html" title="Enthält Beispiele zur Schneiden-Nullpunkt-Definition">Beispiel: Schneiden-Nullpunkt</a></li></ul></li></ul>
+				<li><a href="converted_CAM_parts.html" title="Erklärt notwendige Änderungen in der Werkzeugverwaltung bei CAM-Teilen aus vorherigen CAM-Versionen">Konvertierte CAM-Teile</a></li></ul>
+		</nav>
+	</body>
+</html>

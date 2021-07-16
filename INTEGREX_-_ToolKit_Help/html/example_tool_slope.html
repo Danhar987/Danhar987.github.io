@@ -1,0 +1,77 @@
+<html lang="de">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<title>Angestellte Werkzeuge</title>
+		<link href="../css/Style.css" rel="stylesheet">
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- <script src="../js/main.js" async></script> -->
+		<script src="https://danhar987.github.io/WordToSVGLink.js" async></script>
+		<header>
+			<p id="top">Werkzeugverwaltung - Besonderheiten bei Postprozessoren für die Mazak INTEGREX-Serie</p>
+		</header>
+		<main>
+			<article>
+				<h1>Beispiele für Werkzeug-Ausrichtungen</h1>
+				<p>Die aufgefürhtern Beispiele sollen nur einen kurzen Überblick über die möglichen Einstellungen und daraus resultierenden Werkzeugausrichtungen geben.<br>
+					Die einzustellenden Werte sind immer auch abhängig vom Basis-Werkzeug und von der Ausrichtung eines Werkzeuges im Werkzeughalter.</p>
+				<h2>Beispiel - Standard-Außendreh-Werkzeug</h2>
+				<ol><li>Ausgerichtet für das Längsdrehen an der Hauptspindel - <mark class="setting" data-target="i101Ori">Standard-Ausrichtung</mark>, <mark class="setting" data-target="i101SlopeAng">Anstellwinkel 90°</mark>
+					<svg width="1332" height="722">
+						<image xlink:href="../img/101Tool90degStandard.png" />
+						<rect class="SvgT" id="i101MeasureOri" x="559" y="168" width="230" height="107" />
+						<rect class="SvgT" id="i101Ori" x="572" y="196" width="71" height="19" />
+						<rect class="SvgT" id="i101SlopeAng" x="572" y="226" width="203" height="26" />
+					</svg></li>
+				<li>Ausgerichtet für das Längsdrehen an der Gegenspindel - <mark class="setting" data-target="i102Ori">rückwärts ausgerichtet</mark>, <mark class="setting" data-target="i102SlopeAng">Anstellwinkel 90°</mark>
+					<svg width="1332" height="722">
+						<image xlink:href="../img/102Tool90degReversedForSub.png" />
+						<rect class="SvgT" id="i102MeasureOri" x="559" y="168" width="230" height="107" />
+						<rect class="SvgT" id="i102Ori" x="572" y="196" width="71" height="19" />
+						<rect class="SvgT" id="i102SlopeAng" x="572" y="226" width="203" height="26" />
+					</svg></li>
+				<li>Ausgerichtet für das Plandrehen an der Hauptspindel - <mark class="setting" data-target="i103Ori">rückwärts ausgerichtet</mark>, <mark class="setting" data-target="i103SlopeAng">Anstellwinkel 0°</mark>
+					<svg width="1332" height="722">
+						<image xlink:href="../img/103Tool0degReversed.png" />
+						<rect class="SvgT" id="i103MeasureOri" x="559" y="168" width="230" height="107" />
+						<rect class="SvgT" id="i103Ori" x="572" y="196" width="71" height="19" />
+						<rect class="SvgT" id="i103SlopeAng" x="572" y="226" width="203" height="26" />
+					</svg></li></ol>
+				<hr>
+				<h2>Beispiel - 45°-Srupp-Werkzeug</h2>
+				<ol><li>Ausgerichtet für das Längs- und Plandrehen an der Hauptspindel bei rechtsdrehender Spindel - <mark class="setting" data-target="i111Ori">Standard-Ausrichtung</mark>, <mark class="setting" data-target="i111SlopeAng">Anstellwinkel 45°</mark>
+					<svg width="1332" height="722">
+						<image xlink:href="../img/111Tool45degStandard.png" />
+						<rect class="SvgT" id="i111MeasureOri" x="559" y="168" width="230" height="107" />
+						<rect class="SvgT" id="i111Ori" x="572" y="196" width="71" height="19" />
+						<rect class="SvgT" id="i111SlopeAng" x="572" y="226" width="203" height="26" />
+					</svg></li>
+				<li>Ausgerichtet für das Längs- und Plandrehen an der Hauptspindel bei linksdrehender Spindel - <mark class="setting" data-target="i112Ori">rückwärts ausgerichtet</mark>, <mark class="setting" data-target="i112SlopeAng">Anstellwinkel 45°</mark>
+					<svg width="1332" height="722">
+						<image xlink:href="../img/112Tool45degReversed.png" />
+						<rect class="SvgT" id="i112MeasureOri" x="559" y="168" width="230" height="107" />
+						<rect class="SvgT" id="i112Ori" x="572" y="196" width="71" height="19" />
+						<rect class="SvgT" id="i112SlopeAng" x="572" y="226" width="203" height="26" />
+					</svg></li>
+				<li>Ausgerichtet für das Längs- und Plandrehen an der Gegenspindel bei rechtsdrehender Spindel - <mark class="setting" data-target="i113Ori">rückwärts ausgerichtet</mark>, <mark class="setting" data-target="i113SlopeAng">Anstellwinkel 135°</mark>
+					<svg width="1332" height="722">
+						<image xlink:href="../img/113Tool45degReversedForSub.png" />
+						<rect class="SvgT" id="i113MeasureOri" x="559" y="168" width="230" height="107" />
+						<rect class="SvgT" id="i113Ori" x="572" y="196" width="71" height="19" />
+						<rect class="SvgT" id="i113SlopeAng" x="572" y="226" width="203" height="26" />
+					</svg></li></ol>
+			</article>
+		</main>
+		<nav class="TOC">
+			<a href="../main.html"><b>Start</b></a><br>
+			<ul><li><a href="tool_predefinitions.html" title="Enthält allgemeine Informationen zu den vordefinierbaren Werten">Vordefinition von Dreh-Werkzeugen</a>
+					<ul><li><a href="tool_slope.html" title="Erläutert die, für die Werkzeugausrichtung im Schwenkkopf, nötigen Werte">Werkzeug-Ausrichtung <b>B-Achse</b></a></li>
+							<ul><li><a class="curr">Beispiel: Werkzeug-Ausrichtung</a></li>
+								<li><a href="example_flash_tools.html" title="Besipiele speziell für die Flash-Tool-Option">Beispiel: Flash-Tools</a></li></ul></li>
+						<li><a href="turret_tool_ori.html" title="Erläutert die, für die Werkzeugausrichtung im Revolver, nötigen Werte">Werkzeug-Ausrichtung <b>Revolver</b></a></li>
+						<li><a href="nose_points.html" title="Erläutert die Varianten der Schneiden-Nullpunkt-Definition">Schneiden-Nullpunkt</a></li></ul>
+				<li><a href="converted_CAM_parts.html" title="Erklärt notwendige Änderungen in der Werkzeugverwaltung bei CAM-Teilen aus vorherigen CAM-Versionen">Konvertierte CAM-Teile</a></li></ul>
+		</nav>
+	</body>
+</html>

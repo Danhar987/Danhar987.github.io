@@ -1,0 +1,119 @@
+<html lang="de">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<title>Werkzeug-Ausrichtung - B-Achse</title>
+		<link href="../css/Style.css" rel="stylesheet">
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- <script src="../js/main.js" async></script> -->
+		<script src="https://danhar987.github.io/WordToSVGLink.js" async></script>
+		<header>
+			<p id="top">Werkzeugverwaltung - Besonderheiten bei Postprozessoren für die Mazak INTEGREX-Serie</p>
+		</header>
+		<main>
+			<article>
+				<h1>Werkzeug-Ausrichtung von B-Achs-Werkzeugen</h1>
+				<p>Die Definition der Werkzeugausrichtung erfolgt, für jeden <mark class="target" data-target="i08CutPnt">Schneidenpunkt</mark> separat, auf der Registerkarte <mark class="target" data-target="i08CompSet">Korrekturwerte</mark>.</p>
+				<p>Mit dem Setzen des Haken bei <mark class="setting" data-target="i08MeasureOri">Vermessungsausrichtung</mark> sind die folgenden Einstellungen möglich:
+				<ul>
+					<li>Über <mark class="setting" data-target="i08RevTool">Umkehren</mark> und <mark class="setting" data-target="i08SlopeAng">Axis 'B' value</mark> werden die Werkzeugausrichtung und Anstellwinkel festgelegt.<br>
+						<svg width="844" height="724">
+							<image xlink:href="../img/08ToolUsageAngles.png" />
+							<rect class="SvgT" id="i08CutPnt" x="178" y="403" width="89" height="75" />
+							<rect class="SvgT" id="i08CompSet" x="795" y="157" width="38" height="38" />
+							<rect class="SvgS" id="i08MeasureOri" x="574" y="170" width="140" height="17" />
+							<rect class="SvgS" id="i08RevTool" x="574" y="198" width="69" height="17" />
+							<rect class="SvgS" id="i08SlopeAng" x="574" y="229" width="200" height="22" />
+						</svg>
+					</li>
+					<li>Falls die <mark class="ctrlname">Flash-Tool</mark>-Option an der Maschine vorhanden ist und der Postprozessor dafür angepasst ist, ist auch die Eingabe der <mark class="setting" data-target="i09SpOri">Spindelausrichtung</mark> für die jeweilige Position in einem Mehrfach-Halter definierbar.<br>
+						<svg width="844" height="724">
+							<image xlink:href="../img/09ToolOrientationAngles.png" />
+							<rect class="SvgS" id="i09SpOri" x="574" y="268" width="200" height="22" />
+						</svg>
+					</li>
+				</ul></p>
+				<hr>
+				<p>Mit der <mark class="target" data-target="i10MachPreview">Maschinenvorschau</mark> können die Werte aus der Vermessungsausrichtung, wie z.B. der <mark class="setting" data-target="i10SlopeAng">Anstellwinkel</mark>, auf Korrektheit geprüft werden.<br>
+					In der <mark class="target" data-target="i10ToolPreview">Werkzeug-Vorschau</mark> bleibt das Werkzeug, unabhängig der eingetragenen Werte, fest ausgerichtet. Lediglich anhand des <mark class="result" data-target="i10HomePos">Schneidennullpunkt</mark> lässt Rückschlüsse auf die eingestellten Winkel zu.<br>
+					<svg width="1904" height="722">
+						<image xlink:href="../img/10InsertPreview.png" />
+						<path class="SvgT" id="i10MachPreview"
+							d="M 842,0
+								C 842,0 1332,0 1332,0
+								  1332,0 1332,722 1332,722
+								  1332,722 842,722 842,722
+								  842,722 842,0 842,0 Z
+								M 722,56
+								C 722,56 756,56 756,56
+								  756,56 756,90 756,90
+								  756,90 722,90 722,90
+								  722,90 722,56 722,56 Z" />
+						<path class="SvgS" id="i10SlopeAng"
+							d="M 775,226
+								C 775,226 775,252 775,252
+								  775,252 572,252 572,252
+								  572,252 572,226 572,226
+								  572,226 775,226 775,226 Z
+								M 984,648
+								C 984,648 1081,648 1081,648
+								  1081,648 1081,675 1081,675
+								  1081,675 984,675 984,675
+								  984,675 984,648 984,648 Z" />
+						<path class="SvgT" id="i10ToolPreview"
+							d="M 1333,0
+								C 1333,0 1904,0 1904,0
+								  1904,0 1904,722 1904,722
+								  1904,722 1333,722 1333,722
+								  1333,722 1333,0 1333,0 Z
+								M 759,56
+								C 759,56 793,56 793,56
+								  793,56 793,90 793,90
+								  793,90 759,90 759,90
+								  759,90 759,56 759,56 Z" />
+						<path class="SvgR" id="i10HomePos"
+							d="M 1391,303
+								C 1391,305.76 1388.76,308 1386,308
+								  1383.24,308 1381,305.76 1381,303
+								  1381,300.24 1383.24,298 1386,298
+								  1388.76,298 1391,300.24 1391,303 Z
+								M 1391,301
+								C 1391,301 1435,301 1435,301
+								  1435,301 1435,298 1435,298
+								  1435,298 1455,303 1455,303
+								  1455,303 1435,308 1435,308
+								  1435,308 1435,305 1435,305
+								  1435,305 1391,305 1391,305
+								  1391,305 1391,301 1391,301 Z
+								M 1388,308
+								C 1388,308 1388,352 1388,352
+								  1388,352 1391,352 1391,352
+								  1391,352 1386,372 1386,372
+								  1386,372 1381,352 1381,352
+								  1381,352 1384,352 1384,352
+								  1384,352 1384,308 1384,308
+								  1384,308 1388,308 1388,308 Z" />
+					</svg></p>
+				<p><b>Hinweis:</b><ul class="desc"><li>Bei Anwahl eines <mark class="target" data-target="i11ToolListSelect">Werkzeug-Eintrags</mark> in der Werkzeugliste, werden die eingestellten Winkel in der Maschinenvorschau <mark class="result" data-target="i11SlopeAng">nicht berücksichtigt</mark>.<br>
+					Nur bei Anwahl eines <mark class="setting" data-target="i11CutPntSelect">Schneidenpunktes</mark> im Komplettwerkzeug-Aufbau werden diese Winkel in die Maschinenvorschau einbezogen.<br>
+					<svg width="1904" height="722">
+						<image xlink:href="../img/11ToolListPreview.png" />
+						<rect class="SvgT" id="i11ToolListSelect" x="87" y="146" width="170" height="24" />
+						<rect class="SvgT" id="i11CutPntSelect" x="139" y="426" width="134" height="26" />
+						<rect class="SvgR" id="i11SlopeAng" x="984" y="647" width="97" height="28" />
+					</svg></li></ul><p>
+			</article>
+		</main>
+		<nav class="TOC">
+			<a href="../main.html"><b>Start</b></a><br>
+			<ul><li><a href="tool_predefinitions.html" title="Enthält allgemeine Informationen zu den vordefinierbaren Werten">Vordefinition von Dreh-Werkzeugen</a>
+					<ul><li><a class="curr">Werkzeug-Ausrichtung <b>B-Achse</b></a>
+							<ul><li><a href="example_tool_slope.html" title="Beispiele für verschiedene Werkzeugausrichtungen">Beispiel: Werkzeug-Ausrichtung</a></li>
+								<li><a href="example_flash_tools.html" title="Besipiele speziell für die Flash-Tool-Option">Beispiel: Flash-Tools</a></li></ul></li>
+						<li><a href="turret_tool_ori.html" title="Erläutert die, für die Werkzeugausrichtung im Revolver, nötigen Werte">Werkzeug-Ausrichtung <b>Revolver</b></a></li>
+						<li><a href="nose_points.html" title="Erläutert die Varianten der Schneiden-Nullpunkt-Definition">Schneiden-Nullpunkt</a></li></ul>
+				<li><a href="converted_CAM_parts.html" title="Erklärt notwendige Änderungen in der Werkzeugverwaltung bei CAM-Teilen aus vorherigen CAM-Versionen">Konvertierte CAM-Teile</a></li></ul>
+		</nav>
+	</body>
+</html>

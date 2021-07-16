@@ -1,0 +1,96 @@
+<html lang="de">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<title>Werkzeug-Ausrichtung - Revolver</title>
+		<link href="../css/Style.css" rel="stylesheet">
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- <script src="../js/main.js" async></script> -->
+		<script src="https://danhar987.github.io/WordToSVGLink.js" async></script>
+		<header>
+			<p id="top">Werkzeugverwaltung - Besonderheiten bei Postprozessoren für die Mazak INTEGREX-Serie</p>
+		</header>
+		<main>
+			<article>
+				<h1>Werkzeug-Ausrichtung von Revolver-Werkzeugen</h1>
+				<p>Der um X rotierende Revolver an Maschinen der <mark class="ctrlname">INTEGREX-ST</mark>-Reihe stellt im Vergleich zu allen anderen Maschinen-Typen mit Revolver eine Besonderheit dar.</p>
+				<p>Für herkömmliche Revolver, die um eine Achse parallel zur Maschinen Z-Achse rotieren, werden grundsätzlich für Haupt- und Gegenspindel separate Werkzeuge benötigt, ungeachtet dessen ob diese Werkzeuge in einem gemeinsamen Halter oder an verscheidenen Stationen gespannt sind. In der Werkzeugverwaltung werden diese Werkzeuge "physisch" für die jeweilige Spindel ausgerichtet.</p>
+				<p>Im Gegensatz dazu wird beim Revolver der <mark class="ctrlname">INTEGREX-ST</mark>-Reihe das selbe Werkzeug für Haupt- und Gegenspindel verwendet. Für die Werkzeuge muss deshalb die Ausrichtung für Haupt- und Gegenspindel, ähnlich der Definition von B-Achs-Werkzeugen, für einen jeweils eigenen <mark class="target" data-target="i16CutPnt">Schneidenpunkt</mark> auf der Registerkarte <mark class="target" data-target="i16CompSet">Korrekturwerte</mark> vordefiniert werden.</p>
+				<ul>
+					<li>Mit Setzen des Haken bei <mark class="setting" data-target="i16MeasureOri">Vermessungsausrichtung</mark> kann durch Anwahl von <mark class="setting" data-target="i16RevTool">Umdrehen</mark> die Werkzeugausrichtung für die Gegenspindel festgelegt werden.<br>
+						Der Wert für <mark class="setting" data-target="i16TrrRotVal">Delta Axis 'TR1' value</mark> <b>muss immer mit 0 angegeben werden</b>. Eine abweichende Revolverausrichtung als die für die gewählte Station wird steuerungsseitig nicht unterstützt.<br>
+						<svg width="844" height="724">
+							<image xlink:href="../img/16TurretToolOri.png" />
+							<rect class="SvgT" id="i16CutPnt" x="178" y="427" width="70" height="50" />
+							<rect class="SvgT" id="i16CompSet" x="796" y="157" width="38" height="38" />
+							<rect class="SvgS" id="i16MeasureOri" x="578" y="170" width="140" height="17" />
+							<rect class="SvgS" id="i16RevTool" x="578" y="198" width="69" height="17" />
+							<rect class="SvgS" id="i16TrrRotVal" x="578" y="229" width="200" height="22" />
+						</svg>
+					</li></ul></p>
+				<hr>
+				<p>Mit der <mark class="target" data-target="i17MachPreview">Maschinenvorschau</mark> kann die aktuelle Vermessungsausrichtung geprüft werden.<br>
+					In der <mark class="target" data-target="i17ToolPreview">Werkzeug-Vorschau</mark> bleibt das Werkzeug, unabhängig der eingetragenen Werte, fest ausgerichtet. Lediglich anhand des <mark class="result" data-target="i17HomePos">Schneidennullpunkt</mark> lässt Rückschlüsse auf die eingestellte Richtung zu.</p>
+				<p>Für eine bessere Übersicht in der Werkzeugliste kann die <mark class="setting" data-target="i17CompNo">Werkzeugkorrekturnummer</mark> angepasst werden. Für das erzeugte NC-Programm hat diese keine Auswirkung, wird aber in der Werkzeugliste in <mark class="result" data-target="i17ToolList">Klammern hinter der Werkzeugnummer</mark> angegeben und lässt so auch ohne Anklicken des Werkzeuges einen Rückschluss auf die Ausrichtung zu.<br>
+					<svg width="1904" height="722">
+						<image xlink:href="../img/17InsertPreview.png" />
+						<path class="SvgT" id="i17MachPreview"
+							d="M 842,0
+								C 842,0 1332,0 1332,0
+								1332,0 1332,722 1332,722
+								1332,722 842,722 842,722
+								842,722 842,0 842,0 Z
+								M 722,56
+								C 722,56 756,56 756,56
+								756,56 756,90 756,90
+								756,90 722,90 722,90
+								722,90 722,56 722,56 Z" />
+						<path class="SvgT" id="i17ToolPreview"
+							d="M 1333,0
+								C 1333,0 1808,0 1808,0
+								1808,0 1808,722 1808,722
+								1808,722 1333,722 1333,722
+								1333,722 1333,0 1333,0 Z
+								M 759,56
+								C 759,56 793,56 793,56
+								793,56 793,90 793,90
+								793,90 759,90 759,90
+								759,90 759,56 759,56 Z" />
+						<path class="SvgR" id="i17HomePos"
+							d="M 1511.75,193.25
+								C 1511.75,190.49 1513.99,188.25 1516.75,188.25
+								1519.51,188.25 1521.75,190.49 1521.75,193.25
+								1521.75,196.01 1519.51,198.25 1516.75,198.25
+								1513.99,198.25 1511.75,196.01 1511.75,193.25 Z
+								M 1511.75,195.25
+								C 1511.75,195.25 1467.75,195.25 1467.75,195.25
+								1467.75,195.25 1467.75,198.25 1467.75,198.25
+								1467.75,198.25 1447.75,193.25 1447.75,193.25
+								1447.75,193.25 1467.75,188.25 1467.75,188.25
+								1467.75,188.25 1467.75,191.25 1467.75,191.25
+								1467.75,191.25 1511.75,191.25 1511.75,191.25
+								1511.75,191.25 1511.75,195.25 1511.75,195.25 Z
+								M 1514.75,188.25
+								C 1514.75,188.25 1514.75,144.25 1514.75,144.25
+								1514.75,144.25 1511.75,144.25 1511.75,144.25
+								1511.75,144.25 1516.75,124.25 1516.75,124.25
+								1516.75,124.25 1521.75,144.25 1521.75,144.25
+								1521.75,144.25 1518.75,144.25 1518.75,144.25
+								1518.75,144.25 1518.75,188.25 1518.75,188.25
+								1518.75,188.25 1514.75,188.25 1514.75,188.25 Z" />
+							<rect class="SvgS" id="i17CompNo" x="287" y="108" width="224" height="26" />
+							<rect class="SvgR" id="i17ToolList" x="89" y="262" width="101" height="45" />
+						</svg></p>
+			</article>
+		</main>
+		<nav class="TOC">
+			<a href="../main.html"><b>Start</b></a><br>
+			<ul><li><a href="tool_predefinitions.html" title="Enthält allgemeine Informationen zu den vordefinierbaren Werten">Vordefinition von Dreh-Werkzeugen</a>
+					<ul><li><a href="tool_slope.html" title="Erläutert die, für die Werkzeugausrichtung im Schwenkkopf, nötigen Werte">Werkzeug-Ausrichtung <b>B-Achse</b></a></li>
+						<li><a class="curr">Werkzeug-Ausrichtung <b>Revolver</b></a></li>
+						<li><a href="nose_points.html" title="Erläutert die Varianten der Schneiden-Nullpunkt-Definition">Schneiden-Nullpunkt</a></li></ul>
+				<li><a href="converted_CAM_parts.html" title="Erklärt notwendige Änderungen in der Werkzeugverwaltung bei CAM-Teilen aus vorherigen CAM-Versionen">Konvertierte CAM-Teile</a></li></ul>
+		</nav>
+	</body>
+</html>

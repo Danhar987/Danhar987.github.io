@@ -1,0 +1,263 @@
+<html lang="de">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<title>Werkzeug-Spitzenpunkte</title>
+		<link href="../css/Style.css" rel="stylesheet">
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- <script src="../js/main.js" async></script> -->
+		<script src="https://danhar987.github.io/WordToSVGLink.js" async></script>
+		<header>
+			<p id="top">Werkzeugverwaltung - Besonderheiten bei Postprozessoren für die Mazak INTEGREX-Serie</p>
+		</header>
+		<main>
+			<article>
+				<h1>Beispiele für Schneiden-Nullpunkt-Definitionen</h1>
+				<p>Die folgenden Beispiele sollen einen kurzen Überblick über die möglichen Einstellungen für die Werkzeug-Nullpunkt-Definition geben.</p>
+				<h2>Beispiel - Abstech-Werkzeug</h2>
+				<p>Bei Ab- und Einstechwerkzeugen kann der <mark class="setting" data-target="i121RadiusSelect">Radius</mark> der vermessenen Werkzeug-Seite vorgegeben werden. Der <mark class="setting" data-target="i121NosePoint">Quadranten-Punkt</mark> wird mit dieser Anwahl automatisch angepasst, kann bei Bedarf aber auch geändert werden.</p>
+				<ol class="example"><li><mark class="setting" data-target="i121Ori">Standard-Ausrichtung</mark>, <mark class="target" data-target="i121NosePointResult">Werkzeug-Nullpunkt links</mark><br>
+						Zur Festlegung der Linken Werkzeugseite ist im aktuellen Beispiel die Anwahl des Radius <mark class="setting" data-target="i121RadiusSelect">R-2</mark> notwendig. Der Werkzeug-Nullpunkt liegt damit auf der "Z-" Seite<br>
+						<b>Hinweis:</b><ul class="desc"><li>Durch Anwahl eines <mark class="setting" data-target="i121RadiusSelect">Bezugsradius</mark> ist, anhand des damit automatisch ausgewählten <mark class="result" data-target="i121NosePointResults">Quadranten-Punktes</mark>, die resultierende Werkzeug-Seite, unter Berücksichtigung der aktuellen <mark class="setting" data-target="i121MeasureOri">Vermessungsausrichtung</mark>, wie in der <mark class="result" data-target="i121MachPreview">Maschinenvorschau</mark> dargestellt, zu erkennen.</li></ul>
+						<svg width="1904" height="722">
+							<image xlink:href="../img/121CutOffStandardLeft.png" />
+							<rect class="SvgS" id="i121RadiusSelect" x="413" y="194" width="64" height="25" />
+							<rect class="SvgS" id="i121NosePoint" x="309" y="241" width="153" height="153" />
+							<path class="SvgR" id="i121NosePointResults"
+								d="M 315,361
+									C 315,361 341,361 341,361
+									341,361 341,387 341,387
+									341,387 315,387 315,387
+									315,387 315,361 315,361 Z
+									M 432,362
+									C 432,362 456,362 456,362
+									456,362 456,386 456,386
+									456,386 432,386 432,386
+									432,386 432,362 432,362 Z" />
+							<rect class="SvgT" id="i121NosePointResult" x="315" y="361" width="26" height="26" />
+							<rect class="SvgS" id="i121NosePointValues" x="287" y="417" width="343" height="26" />
+							<rect class="SvgS" id="i121MeasureOri" x="559" y="168" width="230" height="107" />
+							<rect class="SvgS" id="i121Ori" x="572" y="196" width="71" height="19" />
+							<rect class="SvgS" id="i121SlopeAng" x="572" y="226" width="203" height="26" />
+							<path class="SvgR" id="i121HomePos"
+								d="M 1428.5,323.5
+									C 1428.5,326.26 1426.26,328.5 1423.5,328.5
+									1420.74,328.5 1418.5,326.26 1418.5,323.5
+									1418.5,320.74 1420.74,318.5 1423.5,318.5
+									1426.26,318.5 1428.5,320.74 1428.5,323.5 Z
+									M 1428.5,321.5
+									C 1428.5,321.5 1472.5,321.5 1472.5,321.5
+									1472.5,321.5 1472.5,318.5 1472.5,318.5
+									1472.5,318.5 1492.5,323.5 1492.5,323.5
+									1492.5,323.5 1472.5,328.5 1472.5,328.5
+									1472.5,328.5 1472.5,325.5 1472.5,325.5
+									1472.5,325.5 1428.5,325.5 1428.5,325.5
+									1428.5,325.5 1428.5,321.5 1428.5,321.5 Z
+									M 1425.5,328.5
+									C 1425.5,328.5 1425.5,372.5 1425.5,372.5
+									1425.5,372.5 1428.5,372.5 1428.5,372.5
+									1428.5,372.5 1423.5,392.5 1423.5,392.5
+									1423.5,392.5 1418.5,372.5 1418.5,372.5
+									1418.5,372.5 1421.5,372.5 1421.5,372.5
+									1421.5,372.5 1421.5,328.5 1421.5,328.5
+									1421.5,328.5 1425.5,328.5 1425.5,328.5 Z" />
+							<path class="SvgR" id="i121MachPreview"
+								d="M 842,0
+									C 842,0 1332,0 1332,0
+									1332,0 1332,722 1332,722
+									1332,722 842,722 842,722
+									842,722 842,0 842,0 Z
+									M 722,56
+									C 722,56 756,56 756,56
+									756,56 756,90 756,90
+									756,90 722,90 722,90
+									722,90 722,56 722,56 Z" />
+						</svg></li>
+					<li><mark class="setting" data-target="i122Ori">Standard-Ausrichtung</mark>, <mark class="target" data-target="i122NosePointResult">Werkzeug-Nullpunkt rechts</mark><br>
+						Durch Anwahl von Radius <mark class="setting" data-target="i122RadiusSelect">R-1</mark> liegt der Werkzeug-Nullpunkt im aktuellen Beispiel auf der "Z+" Seite.
+						<svg width="1904" height="722">
+							<image xlink:href="../img/122CutOffStandardRight.png" />
+							<rect class="SvgS" id="i122RadiusSelect" x="413" y="194" width="64" height="25" />
+							<rect class="SvgS" id="i122NosePoint" x="309" y="241" width="153" height="153" />
+							<rect class="SvgT" id="i122NosePointResult" x="432" y="361" width="26" height="26" />
+							<rect class="SvgS" id="i122MeasureOri" x="559" y="168" width="230" height="107" />
+							<rect class="SvgS" id="i122Ori" x="572" y="196" width="71" height="19" />
+							<rect class="SvgS" id="i122SlopeAng" x="572" y="226" width="203" height="26" />
+							<path class="SvgR" id="i122HomePos"
+								d="M 1428.5,346
+									C 1428.5,348.76 1426.26,351 1423.5,351
+									1420.74,351 1418.5,348.76 1418.5,346
+									1418.5,343.24 1420.74,341 1423.5,341
+									1426.26,341 1428.5,343.24 1428.5,346 Z
+									M 1428.5,344
+									C 1428.5,344 1472.5,344 1472.5,344
+									1472.5,344 1472.5,341 1472.5,341
+									1472.5,341 1492.5,346 1492.5,346
+									1492.5,346 1472.5,351 1472.5,351
+									1472.5,351 1472.5,348 1472.5,348
+									1472.5,348 1428.5,348 1428.5,348
+									1428.5,348 1428.5,344 1428.5,344 Z
+									M 1425.5,351
+									C 1425.5,351 1425.5,395 1425.5,395
+									1425.5,395 1428.5,395 1428.5,395
+									1428.5,395 1423.5,415 1423.5,415
+									1423.5,415 1418.5,395 1418.5,395
+									1418.5,395 1421.5,395 1421.5,395
+									1421.5,395 1421.5,351 1421.5,351
+									1421.5,351 1425.5,351 1425.5,351 Z" />
+						</svg></li>
+					<li><mark class="setting" data-target="i123Ori">Rückwärts ausgerichtet</mark>, <mark class="target" data-target="i123NosePointResult">Werkzeug-Nullpunkt rechts</mark><br>
+						Der <mark class="setting" data-target="i123RadiusSelect">Bezugs-Radius</mark> bleibt fest mit der Schneidplatte verbunden und liegt damit, im Gegensatz zum Werkzeugkorrekturindex A dieses Werkzeuges, nach der Werkzeug-Umkehr auf der "Z+" Seite. Um falsche Definitionen zu vermeiden sollte daher die Vermessungsausrichtung vor der Nullpunkt-Definition festgelegt werden.<br>
+						<svg width="1904" height="722">
+							<image xlink:href="../img/123CutOffReversedRight.png" />
+							<rect class="SvgS" id="i123RadiusSelect" x="413" y="194" width="64" height="25" />
+							<rect class="SvgS" id="i123NosePoint" x="309" y="241" width="153" height="153" />
+							<rect class="SvgT" id="i123NosePointResult" x="432" y="361" width="26" height="26" />
+							<rect class="SvgS" id="i123MeasureOri" x="559" y="168" width="230" height="107" />
+							<rect class="SvgS" id="i123Ori" x="572" y="196" width="71" height="19" />
+							<rect class="SvgS" id="i123SlopeAng" x="572" y="226" width="203" height="26" />
+							<path class="SvgR" id="i123HomePos"
+								d="M 1428.5,323.5
+									C 1428.5,320.74 1426.26,318.5 1423.5,318.5
+									1420.74,318.5 1418.5,320.74 1418.5,323.5
+									1418.5,326.26 1420.74,328.5 1423.5,328.5
+									1426.26,328.5 1428.5,326.26 1428.5,323.5 Z
+									M 1428.5,325.5
+									C 1428.5,325.5 1472.5,325.5 1472.5,325.5
+									1472.5,325.5 1472.5,328.5 1472.5,328.5
+									1472.5,328.5 1492.5,323.5 1492.5,323.5
+									1492.5,323.5 1472.5,318.5 1472.5,318.5
+									1472.5,318.5 1472.5,321.5 1472.5,321.5
+									1472.5,321.5 1428.5,321.5 1428.5,321.5
+									1428.5,321.5 1428.5,325.5 1428.5,325.5 Z
+									M 1425.5,318.5
+									C 1425.5,318.5 1425.5,274.5 1425.5,274.5
+									1425.5,274.5 1428.5,274.5 1428.5,274.5
+									1428.5,274.5 1423.5,254.5 1423.5,254.5
+									1423.5,254.5 1418.5,274.5 1418.5,274.5
+									1418.5,274.5 1421.5,274.5 1421.5,274.5
+									1421.5,274.5 1421.5,318.5 1421.5,318.5
+									1421.5,318.5 1425.5,318.5 1425.5,318.5 Z" />
+						</svg></li>
+					<li><mark class="setting" data-target="i124Ori">Rückwärts ausgerichtet</mark>, <mark class="target" data-target="i124NosePointResult">Werkzeug-Nullpunkt links</mark><br>
+						Bedingt durch die Werkzeug-Umkehr wird mit Anwahl des Radius <mark class="setting" data-target="i124RadiusSelect">R-1</mark> für das aktuelle Beispiel die "Z-" Seite ausgewählt.<br>
+						<svg width="1904" height="722">
+							<image xlink:href="../img/124CutOffReversedLeft.png" />
+							<rect class="SvgS" id="i124RadiusSelect" x="413" y="194" width="64" height="25" />
+							<rect class="SvgS" id="i124NosePoint" x="309" y="241" width="153" height="153" />
+							<rect class="SvgT" id="i124NosePointResult" x="315" y="361" width="26" height="26" />
+							<rect class="SvgS" id="i124MeasureOri" x="559" y="168" width="230" height="107" />
+							<rect class="SvgS" id="i124Ori" x="572" y="196" width="71" height="19" />
+							<rect class="SvgS" id="i124SlopeAng" x="572" y="226" width="203" height="26" />
+							<path class="SvgR" id="i124HomePos"
+								d="M 1428.5,346
+									C 1428.5,343.24 1426.26,341 1423.5,341
+									1420.74,341 1418.5,343.24 1418.5,346
+									1418.5,348.76 1420.74,351 1423.5,351
+									1426.26,351 1428.5,348.76 1428.5,346 Z
+									M 1428.5,348
+									C 1428.5,348 1472.5,348 1472.5,348
+									1472.5,348 1472.5,351 1472.5,351
+									1472.5,351 1492.5,346 1492.5,346
+									1492.5,346 1472.5,341 1472.5,341
+									1472.5,341 1472.5,344 1472.5,344
+									1472.5,344 1428.5,344 1428.5,344
+									1428.5,344 1428.5,348 1428.5,348 Z
+									M 1425.5,341
+									C 1425.5,341 1425.5,297 1425.5,297
+									1425.5,297 1428.5,297 1428.5,297
+									1428.5,297 1423.5,277 1423.5,277
+									1423.5,277 1418.5,297 1418.5,297
+									1418.5,297 1421.5,297 1421.5,297
+									1421.5,297 1421.5,341 1421.5,341
+									1421.5,341 1425.5,341 1425.5,341 Z" />
+						</svg></li></ol>
+				<h2>Beispiel - Gewinde-Stahl</h2>
+				<ol><li><mark class="setting" data-target="i131Ori">Standard-Ausrichtung</mark><br>
+						Der <mark class="setting" data-target="i131NosePointValueZ">Z-Versatzwert</mark> wurde angepasst um den Werkzeug-Bezugspunkt auf die, für die Werkzeugvermessung erreichbare, <mark class="result" data-target="i131NosePointZ">Werkzeug-Vorderkante</mark> zu verschieben.<br>
+						<svg width="1904" height="722">
+							<image xlink:href="../img/131ThreadCuttingPointStandard.png" />
+							<rect class="SvgS" id="i131RadiusSelect" x="413" y="194" width="64" height="25" />
+							<rect class="SvgS" id="i131NosePoint" x="309" y="241" width="153" height="153" />
+							<rect class="SvgS" id="i131NosePointValues" x="287" y="417" width="343" height="26" />
+							<rect class="SvgS" id="i131NosePointValueZ" x="544" y="417" width="86" height="26" />
+							<rect class="SvgS" id="i131MeasureOri" x="559" y="168" width="230" height="107" />
+							<rect class="SvgS" id="i131Ori" x="572" y="196" width="71" height="19" />
+							<rect class="SvgS" id="i131SlopeAng" x="572" y="226" width="203" height="26" />
+							<path class="SvgR" id="i131NosePointZ"
+								d="M 1527,301
+									C 1527,301 1710,301 1710,301" />
+							<path class="SvgR" id="i131HomePos"
+								d="M 1557.5,344
+									C 1557.5,346.76 1555.26,349 1552.5,349
+									1549.74,349 1547.5,346.76 1547.5,344
+									1547.5,341.24 1549.74,339 1552.5,339
+									1555.26,339 1557.5,341.24 1557.5,344 Z
+									M 1557.5,342
+									C 1557.5,342 1601.5,342 1601.5,342
+									1601.5,342 1601.5,339 1601.5,339
+									1601.5,339 1621.5,344 1621.5,344
+									1621.5,344 1601.5,349 1601.5,349
+									1601.5,349 1601.5,346 1601.5,346
+									1601.5,346 1557.5,346 1557.5,346
+									1557.5,346 1557.5,342 1557.5,342 Z
+									M 1554.5,349
+									C 1554.5,349 1554.5,393 1554.5,393
+									1554.5,393 1557.5,393 1557.5,393
+									1557.5,393 1552.5,413 1552.5,413
+									1552.5,413 1547.5,393 1547.5,393
+									1547.5,393 1550.5,393 1550.5,393
+									1550.5,393 1550.5,349 1550.5,349
+									1550.5,349 1554.5,349 1554.5,349 Z" />
+						</svg></li>
+					<li><mark class="setting" data-target="i132Ori">Rückwärts ausgerichtet</mark><br>
+						Durch die Werkzeug-Umkehr muss hier der <mark class="setting" data-target="i132NosePointValueZ">Z-Versatzwert</mark> gegenüber der Standard-Ausrichtung positiv angegeben werden um den Werkzeug-Bezugspunkt ebenfalls auf die <mark class="result" data-target="i132NosePointZ">Werkzeug-Kante</mark> zu setzen.<br>
+						<svg width="1904" height="722">
+							<image xlink:href="../img/132ThreadCuttingPointReversedForSub.png" />
+							<rect class="SvgS" id="i132RadiusSelect" x="413" y="194" width="64" height="25" />
+							<rect class="SvgS" id="i132NosePoint" x="309" y="241" width="153" height="153" />
+							<rect class="SvgS" id="i132NosePointValues" x="287" y="417" width="343" height="26" />
+							<rect class="SvgS" id="i132NosePointValueZ" x="544" y="417" width="86" height="26" />
+							<rect class="SvgS" id="i132MeasureOri" x="559" y="168" width="230" height="107" />
+							<rect class="SvgS" id="i132Ori" x="572" y="196" width="71" height="19" />
+							<rect class="SvgS" id="i132SlopeAng" x="572" y="226" width="203" height="26" />
+							<path class="SvgR" id="i132NosePointZ"
+								d="M 1527,301
+								C 1527,301 1710,301 1710,301" />
+							<path class="SvgR" id="i132HomePos"
+								d="M 1557.5,344
+									C 1557.5,341.24 1555.26,339 1552.5,339
+									1549.74,339 1547.5,341.24 1547.5,344
+									1547.5,346.76 1549.74,349 1552.5,349
+									1555.26,349 1557.5,346.76 1557.5,344 Z
+									M 1557.5,346
+									C 1557.5,346 1601.5,346 1601.5,346
+									1601.5,346 1601.5,349 1601.5,349
+									1601.5,349 1621.5,344 1621.5,344
+									1621.5,344 1601.5,339 1601.5,339
+									1601.5,339 1601.5,342 1601.5,342
+									1601.5,342 1557.5,342 1557.5,342
+									1557.5,342 1557.5,346 1557.5,346 Z
+									M 1554.5,339
+									C 1554.5,339 1554.5,295 1554.5,295
+									1554.5,295 1557.5,295 1557.5,295
+									1557.5,295 1552.5,275 1552.5,275
+									1552.5,275 1547.5,295 1547.5,295
+									1547.5,295 1550.5,295 1550.5,295
+									1550.5,295 1550.5,339 1550.5,339
+									1550.5,339 1554.5,339 1554.5,339 Z" />
+						</svg></li></ol>
+			</article>
+		</main>
+		<nav class="TOC">
+			<a href="../main.html"><b>Start</b></a><br>
+			<ul><li><a href="tool_predefinitions.html" title="Enthält allgemeine Informationen zu den vordefinierbaren Werten">Vordefinition von Dreh-Werkzeugen</a>
+					<ul><li><a href="tool_slope.html" title="Erläutert die, für die Werkzeugausrichtung im Schwenkkopf, nötigen Werte">Werkzeug-Ausrichtung <b>B-Achse</b></a></li>
+						<li><a href="turret_tool_ori.html" title="Erläutert die, für die Werkzeugausrichtung im Revolver, nötigen Werte">Werkzeug-Ausrichtung <b>Revolver</b></a></li>
+						<li><a href="nose_points.html" title="Erläutert die Varianten der Schneiden-Nullpunkt-Definition">Schneiden-Nullpunkt</a>
+								<ul><li><a class="curr">Beispiel: Schneiden-Nullpunkt</a></li></ul></li></ul>
+				<li><a href="converted_CAM_parts.html" title="Erklärt notwendige Änderungen in der Werkzeugverwaltung bei CAM-Teilen aus vorherigen CAM-Versionen">Konvertierte CAM-Teile</a></li></ul>
+		</nav>
+	</body>
+</html>

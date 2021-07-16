@@ -1,0 +1,51 @@
+<html lang="de">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<title>Werkzeug-Voreinstellungen in der Werkzeugverwaltung</title>
+		<link href="../css/Style.css" rel="stylesheet">
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- <script src="../js/main.js" async></script> -->
+		<script src="https://danhar987.github.io/WordToSVGLink.js" async></script>
+		<header>
+			<p id="top">Werkzeugverwaltung - Besonderheiten bei Postprozessoren für die Mazak INTEGREX-Serie</p>
+		</header>
+		<main>
+			<article>
+				<h1>Vordefinition der Dreh-Werkzeuge</h1>
+				<p>Für Maschinen der Mazak INTEGREX-Serie werden die Dreh-Werkzeuge bereits in der Werkzeugverwaltung mit <a href="tool_slope.html">Werkzeug-Ausrichtung</a> und <a href="nose_points.html">Schneiden-Nullpunkt</a> so definiert, wie es für die Verwendung im Job nötig ist.</p>
+				<p>Im Job wird das Dreh-Werkzeug mit den, in der Werkzeugverwaltung definierten, Korrektur-Daten verwendet. Abweichende Winkel, Ausrichtungen und Schneiden-Nullpunkte können in Dreh-Jobs nicht angegeben werden, sondern müssen dürch jeweils eigene Schneidenpunkte für das selbe Werkzeug festgelegt werden.<br>
+					Im <mark class="result" data-target="i056Assembly">Komplettwerkzeug-Aufbau</mark> können, über einen Rechtsklick auf die <mark class="target" data-target="i05Insert">Schneidplatte</mark> oder auf einen bestehenden <mark class="target" data-target="i06CutPnt">Schneidenpunkt</mark>, zusätzliche <mark class="target" data-target="i056AddCutPnt">Schneidenpunkte</mark> hinzugefügt werden.<br>
+					<svg width="1035" height="724">
+						<image xlink:href="../img/05AddCutPntV01.png" />
+						<image xlink:href="../img/06AddCutPntV02.png" x="535" y="0"/>
+						<path class="SvgR" id="i056Assembly"
+							d="M 85,335 h 192 v 347 H 85 V 355 Z
+								M 620,335 h 192 v 347 H 620 V 355 Z"/>
+						<path class="SvgT" id="i056AddCutPnt"
+							d="M 218,547 h 178 v 19 H 218 V 547 Z
+								M 776,449 h 178 v 19 H 776 V 449 Z"/>
+						<rect class="SvgT" id="i05Insert" x="132" y="382" width="105" height="25" />
+						<rect class="SvgT" id="i06CutPnt" x="690" y="428" width="89" height="25" />
+					</svg><br>
+				</p>
+				<p>Für jeden Schneidenpunkt ist ein eigener <mark class="setting" data-target="i07CompIdx">Werkzeugkorrekturindex</mark> nötig. Dieser wird auch zur Definition der <mark class="ctrlname">ID Code</mark> des Werkzeuges an der Steuerung verwendet.<br>
+					Es ist immer nur ein freier, für die Werkzeugnummer noch nicht verwendeter, Werkzeugkorrekturindex anwählbar.<br>
+					<svg width="844" height="724">
+						<image xlink:href="../img/07ToolWithCutPnts.png" />
+						<rect class="SvgS" id="i07CompIdx" x="728" y="112" width="60" height="21" />
+					</svg>
+				</p>
+			</article>
+		</main>
+		<nav class="TOC">
+			<a href="../main.html"><b>Start</b></a><br>
+			<ul><li><a class="curr">Vordefinition von Dreh-Werkzeugen</a>
+					<ul><li><a href="tool_slope.html" title="Erläutert die, für die Werkzeugausrichtung im Schwenkkopf, nötigen Werte">Werkzeug-Ausrichtung <b>B-Achse</b></a></li>
+						<li><a href="turret_tool_ori.html" title="Erläutert die, für die Werkzeugausrichtung im Revolver, nötigen Werte">Werkzeug-Ausrichtung <b>Revolver</b></a></li>
+						<li><a href="nose_points.html" title="Erläutert die Varianten der Schneiden-Nullpunkt-Definition">Schneiden-Nullpunkt</a></li></ul>
+				<li><a href="converted_CAM_parts.html" title="Erklärt notwendige Änderungen in der Werkzeugverwaltung bei CAM-Teilen aus vorherigen CAM-Versionen">Konvertierte CAM-Teile</a></li></ul>
+		</nav>
+	</body>
+</html>

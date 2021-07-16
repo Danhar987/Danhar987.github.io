@@ -1,0 +1,63 @@
+<html lang="de">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<title>Anpassungen in der Werkzeugverwaltung bei konvertierten CAM-Teilen</title>
+		<link href="../css/Style.css" rel="stylesheet">
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- <script src="../js/main.js" async></script> -->
+		<script src="https://danhar987.github.io/WordToSVGLink.js" async></script>
+		<header>
+			<p id="top">Werkzeugverwaltung - Besonderheiten bei Postprozessoren für die Mazak INTEGREX-Serie</p>
+		</header>
+		<main>
+			<article>
+				<h1>Anpassungen bei CAM-Teilen aus vorherigen Versionen</h1>
+				<p>Nach der Konvertierung von CAM-Teilen aus vorherigen Versionen werden Werkzeuge, die mit mehreren Korrekturen oder verschiedenen Ausrichtungen angelegt wurden, als Mehrfach-Werkzeuge – d.h. als <mark class="result" data-target="i01Multi">verschiedene Werkzeuge auf demselben Platz</mark> – aufgelistet.<br>
+					<svg width="844" height="724">
+						<image xlink:href="../img/01ConvertedToolTable.png" />
+						<rect class="SvgR" id="i01Multi" x="87" y="337" width="188" height="189" />
+					</svg>
+				</p>
+				<p>Die neue Werkzeugverwaltung bietet eine Möglichkeit, die Werkzeuge automatisch zu korrigieren. Dazu wird in der Menüleiste <mark class="target" data-target="i02Edit">Bearbeiten</mark> &rAarr; <mark class="target" data-target="i02Optimize">Optimize Tools</mark> angewählt.<br>
+					<svg width="844" height="724">
+						<image xlink:href="../img/02OptimizeToolsSelection.png" />
+						<rect class="SvgT" id="i02Edit" x="42" y="31" width="70" height="19" />
+						<rect class="SvgT" id="i02Optimize" x="43" y="101" width="203" height="27" />
+					</svg>
+				</p>
+				<p>Im folgenden Fenster kann – für jede erkannte Werkzeugpaarung separat – entschieden werden, wie die Werkzeugpaare korrigiert werden sollen.<br>
+					<ul>
+						<li><mark class="setting" data-target="i03Multi">Keep as Multi-Tool</mark>: Die Option nimmt keine Änderung an der Art des Werkzeugpaares vor. Diese Option ist beispielsweise zu verwenden, wenn verschiedene Werkzeuge in einem Mehrfach-Halter gespannt sind.</li>
+						<li><mark class="setting" data-target="i03Separate">Disassambly to separate Tools</mark>: Die Option macht aus der Werkzeugpaarung einzelne Werkzeuge mit jeweils einer eigenen Werkzeugnummer.<br>
+							Dabei ist zu beachten, dass ein Werkzeug die ursprüngliche Werkzeugnummer behält und für die anderen die jeweils niedrigste freie Werkzeugnummer verwendet wird. Ist von mehreren Werkzeugen mit derselben Nummer nur eins in Verwendung, behält dieses die ursprüngliche Werkzeugnummer.</li>
+						<li><mark class="setting" data-target="i03Same">Same Tool with new Cutting Point</mark>: Diese Option ist die wahrscheinlich meist zutreffende Funktion, mit der aus den Werkzeugpaaren ein Werkzeug mit 2 – ggf. auch mehr – Schneidenpunkten erzeugt wird.<br>
+							Durch diese Anwahl werden die Werkzeuge folgendermaßen neu gruppiert:<br>
+						</li>
+					</ul>
+					<svg width="665" height="404">
+						<image xlink:href="../img/03OptimizeToolsOptions.png" />
+						<rect class="SvgS" id="i03Multi" x="343" y="58" width="108" height="17" />
+						<rect class="SvgS" id="i03Separate" x="343" y="81" width="165" height="17" />
+						<rect class="SvgS" id="i03Same" x="343" y="102" width="288" height="17" />
+					</svg>
+				</p>
+				Nach einer Optimierung mit <mark>Same Tool with new Cutting Point</mark> wird im <mark class="result" data-target="i04Assembly">Komplettwerkzeug-Aufbau</mark> aus mehreren Werkzeugen auf einem Werkzeugplatz <mark class="result" data-target="i04CutPnt">ein Werkzeug mit 2 Schneidenpunkten</mark> (in diesem Fall mit „Schneidenlage“ und „Schneidenlage_1“ benannt).<br>
+				In der <mark class="result" data-target="i04TList">Werkzeugliste</mark> werden jetzt für diese Werkzeuge <mark class="result" data-target="i04TCompIdx">Werkzeugkorrekturnummer und Werkzeugkorrekturindex</mark> in Klammern hinter der Werkzeugnummer angezeigt.<br>
+				<svg width="844" height="724">
+					<image xlink:href="../img/04ToolWithCuttingPoints.png" />
+					<rect class="SvgR" id="i04TList" x="85" y="98" width="192" height="233" />
+					<rect class="SvgR" id="i04TCompIdx" x="114" y="152" width="39" height="39" />
+					<rect class="SvgR" id="i04Assembly" x="85" y="335" width="192" height="347" />
+					<rect class="SvgR" id="i04CutPnt" x="88" y="338" width="186" height="116" />
+				</svg>
+			</article>
+		</main>
+		<nav class="TOC">
+			<a href="../main.html"><b>Start</b></a><br>
+			<ul><li><a href="tool_predefinitions.html" title="Enthält allgemeine Informationen zu den vordefinierbaren Werten">Vordefinition von Dreh-Werkzeugen</a>
+				<li><a class="curr">Konvertierte CAM-Teile</a></li></ul>
+		</nav>
+	</body>
+</html>

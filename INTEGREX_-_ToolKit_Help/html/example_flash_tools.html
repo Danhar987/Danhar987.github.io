@@ -1,0 +1,287 @@
+<html lang="de">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<title>FlashTools</title>
+		<link href="../css/Style.css" rel="stylesheet">
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- <script src="../js/main.js" async></script> -->
+		<script src="https://danhar987.github.io/WordToSVGLink.js" async></script>
+		<header>
+			<p id="top">Werkzeugverwaltung - Besonderheiten bei Postprozessoren für die Mazak INTEGREX-Serie</p>
+		</header>
+		<main>
+			<article>
+				<h1>Platzierung mehrerer Werkzeuge</h1>
+				<p>Wurden für einen <mark class="target" data-target="i12MultiToolHolder">Werkzeughalter</mark> mehrere <mark class="result" data-target="i12JointList">Verbindungspunkte</mark> festgelegt, können mehrere Werkzeuge bzw. Schneidplatten am Halter platziert werden.<br>
+					<svg width="844" height="724">
+						<image xlink:href="../img/12MultiToolJoints.png" />
+						<rect class="SvgT" id="i12MultiToolHolder" x="91" y="358" width="149" height="27" />
+						<rect class="SvgR" id="i12JointList" x="283" y="236" width="517" height="150" />
+					</svg></p>
+				<p>Je nachdem, ob an den Verbindungspunkten ein zusammengesetztes Werkzeug oder dierekt eine Schneidplatte platziert wird, können die Verbindungspunkte von Mehrfach-Haltern durch Anwahl dieser Komponente im <mark class="target" data-target="i13Assembly">Komplettwerkzeug-Aufbau</mark> und anschließender Auswahl der Registerkarte <mark class="target" data-target="i13Joints">Verbindungen</mark> aus einer <mark class="setting" data-target="i13JointSelect">Liste</mark> ausgewählt werden.<br>
+					<i>Die Bezeichnungen der Verbindungspunkte in der Auswahlliste werden bei der Erstellung des Halters in der Werkzeugverwaltung festgelegt.</i></p>
+					<svg width="844" height="724">
+						<image xlink:href="../img/13MultiToolPlacement.png" />
+						<path class="SvgT" id="i13Assembly"
+							d="M 85,335 h 192 v 347 H 85 V 355" />
+						<rect class="SvgT" id="i13Joints" x="796" y="194" width="38" height="38" />
+						<rect class="SvgS" id="i13JointSelect" x="439" y="111" width="170" height="64" />
+					</svg></p>
+				<hr>
+				<h1>Beispiel-Definition für "Flash-Tools"</h1>
+				<p>Im folgenden Beispiel wurden in einem 3-Fach-Halter verschiedene Werkzeuge je einmal für die Hauptspindel- und einmal die Gegenspindel-Bearbeitung angelegt.<br>
+					Dabei unterscheiden sich die Vermessungsausrichtungen des selben Werkzeuges für die Hauptspindel- und Gegenspindel-Bearbeitung nur in der <mark class="setting" data-target="i141Ori">Spindel-Umkehr</mark>.</p>
+				<p>Die <mark class="setting" data-target="i141SpOri">Spindelausrichtung</mark> wird in die <mark class="target" data-target="i141MachPreview">Maschinenvorschau</mark> direkt einbezogen. In der <mark class="target" data-target="i141ToolPreview">Werkzeug-Vorschau</mark> ist die Spindelausrichtung nur an der Lage und Ausrichtung des <mark class="result" data-target="i141HomePos">Schneidennullpunktes</mark> ersichtlich.</p>
+				<h2>1.Werkzeug - 35°-Platte - <mark class="setting" data-target="i141SpOri">Werkzeug bei 0°-Ausrichtung</mark></h2>
+				<p><mark class="setting" data-target="i141Ori">Hauptspindel-Ausrichtung</mark>
+					<svg width="1904" height="722">
+						<image xlink:href="../img/141FlashTool1Standard.png" />
+						<path class="SvgT" id="i141MachPreview"
+							d="M 842,0
+								C 842,0 1332,0 1332,0
+								1332,0 1332,722 1332,722
+								1332,722 842,722 842,722
+								842,722 842,0 842,0 Z
+								M 722,56
+								C 722,56 756,56 756,56
+								756,56 756,90 756,90
+								756,90 722,90 722,90
+								722,90 722,56 722,56 Z" />
+						<path class="SvgT" id="i141ToolPreview"
+							d="M 1333,0
+								C 1333,0 1904,0 1904,0
+								1904,0 1904,722 1904,722
+								1904,722 1333,722 1333,722
+								1333,722 1333,0 1333,0 Z
+								M 759,56
+								C 759,56 793,56 793,56
+								793,56 793,90 793,90
+								793,90 759,90 759,90
+								759,90 759,56 759,56 Z" />
+						<rect class="SvgS" id="i141MeasureOri" x="559" y="168" width="230" height="147" />
+						<rect class="SvgS" id="i141Ori" x="572" y="198" width="71" height="19" />
+						<rect class="SvgS" id="i141SlopeAng" x="572" y="230" width="203" height="26" />
+						<rect class="SvgS" id="i141SpOri" x="572" y="265" width="203" height="26" />
+						<path class="SvgR" id="i141HomePos"
+							d="M 1400.5,285
+								C 1400.5,287.76 1398.26,290 1395.5,290
+								1392.74,290 1390.5,287.76 1390.5,285
+								1390.5,282.24 1392.74,280 1395.5,280
+								1398.26,280 1400.5,282.24 1400.5,285 Z
+								M 1400.5,283
+								C 1400.5,283 1444.5,283 1444.5,283
+								1444.5,283 1444.5,280 1444.5,280
+								1444.5,280 1464.5,285 1464.5,285
+								1464.5,285 1444.5,290 1444.5,290
+								1444.5,290 1444.5,287 1444.5,287
+								1444.5,287 1400.5,287 1400.5,287
+								1400.5,287 1400.5,283 1400.5,283 Z
+								M 1397.5,290
+								C 1397.5,290 1397.5,334 1397.5,334
+								1397.5,334 1400.5,334 1400.5,334
+								1400.5,334 1395.5,354 1395.5,354
+								1395.5,354 1390.5,334 1390.5,334
+								1390.5,334 1393.5,334 1393.5,334
+								1393.5,334 1393.5,290 1393.5,290
+								1393.5,290 1397.5,290 1397.5,290 Z" />
+					</svg></p>
+				<p><mark class="setting" data-target="i142Ori">Gegenspindel-Ausrichtung</mark>
+					<svg width="1904" height="722">
+						<image xlink:href="../img/142FlashTool1ReversedForSub.png" />
+						<rect class="SvgS" id="i142MeasureOri" x="559" y="168" width="230" height="147" />
+						<rect class="SvgS" id="i142Ori" x="572" y="198" width="71" height="19" />
+						<rect class="SvgS" id="i142SlopeAng" x="572" y="230" width="203" height="26" />
+						<rect class="SvgS" id="i142SpOri" x="572" y="265" width="203" height="26" />
+						<path class="SvgR" id="i142HomePos"
+							d="M 1400.5,285
+								C 1400.5,282.24 1398.26,280 1395.5,280
+								1392.74,280 1390.5,282.24 1390.5,285
+								1390.5,287.76 1392.74,290 1395.5,290
+								1398.26,290 1400.5,287.76 1400.5,285 Z
+								M 1400.5,287
+								C 1400.5,287 1444.5,287 1444.5,287
+								1444.5,287 1444.5,290 1444.5,290
+								1444.5,290 1464.5,285 1464.5,285
+								1464.5,285 1444.5,280 1444.5,280
+								1444.5,280 1444.5,283 1444.5,283
+								1444.5,283 1400.5,283 1400.5,283
+								1400.5,283 1400.5,287 1400.5,287 Z
+								M 1397.5,280
+								C 1397.5,280 1397.5,236 1397.5,236
+								1397.5,236 1400.5,236 1400.5,236
+								1400.5,236 1395.5,216 1395.5,216
+								1395.5,216 1390.5,236 1390.5,236
+								1390.5,236 1393.5,236 1393.5,236
+								1393.5,236 1393.5,280 1393.5,280
+								1393.5,280 1397.5,280 1397.5,280 Z" />
+					</svg></p>
+				<h2>2.Werkzeug - 80°-Platte - <mark class="setting" data-target="i143SpOri">Werkzeug bei 120°-Ausrichtung</mark></h2>
+				<p><mark class="setting" data-target="i143Ori">Hauptspindel-Ausrichtung</mark>
+					<svg width="1904" height="722">
+						<image xlink:href="../img/143FlashTool2Standard.png" />
+						<rect class="SvgS" id="i143MeasureOri" x="559" y="168" width="230" height="147" />
+						<rect class="SvgS" id="i143Ori" x="572" y="198" width="71" height="19" />
+						<rect class="SvgS" id="i143SlopeAng" x="572" y="230" width="203" height="26" />
+						<rect class="SvgS" id="i143SpOri" x="572" y="265" width="203" height="26" />
+						<path class="SvgR" id="i143HomePos"
+							d="M 1401.5,419.5
+								C 1401.5,422.26 1399.26,424.5 1396.5,424.5
+								1393.74,424.5 1391.5,422.26 1391.5,419.5
+								1391.5,416.74 1393.74,414.5 1396.5,414.5
+								1399.26,414.5 1401.5,416.74 1401.5,419.5 Z
+								M 1401.5,417.5
+								C 1401.5,417.5 1445.5,417.5 1445.5,417.5
+								1445.5,417.5 1445.5,414.5 1445.5,414.5
+								1445.5,414.5 1465.5,419.5 1465.5,419.5
+								1465.5,419.5 1445.5,424.5 1445.5,424.5
+								1445.5,424.5 1445.5,421.5 1445.5,421.5
+								1445.5,421.5 1401.5,421.5 1401.5,421.5
+								1401.5,421.5 1401.5,417.5 1401.5,417.5 Z
+								M 1398.5,417.2
+								C 1398.5,417.2 1398.5,395.2 1398.5,395.2
+								1398.5,395.2 1401.5,395.2 1401.5,395.2
+								1401.5,395.2 1396.5,385.2 1396.5,385.2
+								1396.5,385.2 1391.5,395.2 1391.5,395.2
+								1391.5,395.2 1394.5,395.2 1394.5,395.2
+								1394.5,395.2 1394.5,417.2 1394.5,417.2
+								1394.5,417.2 1398.5,417.2 1398.5,417.2 Z
+								M 1398.5,415.21
+								C 1398.5,415.21 1398.5,377.15 1398.5,377.15
+								1398.5,377.15 1401.5,377.15 1401.5,377.15
+								1401.5,377.15 1396.5,359.85 1396.5,359.85
+								1396.5,359.85 1391.5,377.15 1391.5,377.15
+								1391.5,377.15 1394.5,377.15 1394.5,377.15
+								1394.5,377.15 1394.5,415.21 1394.5,415.21
+								1394.5,415.21 1398.5,415.21 1398.5,415.21 Z" />
+					</svg></p>
+				<p><mark class="setting" data-target="i144Ori">Gegenspindel-Ausrichtung</mark>
+					<svg width="1904" height="722">
+						<image xlink:href="../img/144FlashTool2ReversedForSub.png" />
+						<rect class="SvgS" id="i144MeasureOri" x="559" y="168" width="230" height="147" />
+						<rect class="SvgS" id="i144Ori" x="572" y="198" width="71" height="19" />
+						<rect class="SvgS" id="i144SlopeAng" x="572" y="230" width="203" height="26" />
+						<rect class="SvgS" id="i144SpOri" x="572" y="265" width="203" height="26" />
+						<path class="SvgR" id="i144HomePos"
+							d="M 1401.5,419.5
+								C 1401.5,416.74 1399.26,414.5 1396.5,414.5
+								1393.74,414.5 1391.5,416.74 1391.5,419.5
+								1391.5,422.26 1393.74,424.5 1396.5,424.5
+								1399.26,424.5 1401.5,422.26 1401.5,419.5 Z
+								M 1401.5,421.5
+								C 1401.5,421.5 1445.5,421.5 1445.5,421.5
+								1445.5,421.5 1445.5,424.5 1445.5,424.5
+								1445.5,424.5 1465.5,419.5 1465.5,419.5
+								1465.5,419.5 1445.5,414.5 1445.5,414.5
+								1445.5,414.5 1445.5,417.5 1445.5,417.5
+								1445.5,417.5 1401.5,417.5 1401.5,417.5
+								1401.5,417.5 1401.5,421.5 1401.5,421.5 Z
+								M 1398.5,421.8
+								C 1398.5,421.8 1398.5,443.8 1398.5,443.8
+								1398.5,443.8 1401.5,443.8 1401.5,443.8
+								1401.5,443.8 1396.5,453.8 1396.5,453.8
+								1396.5,453.8 1391.5,443.8 1391.5,443.8
+								1391.5,443.8 1394.5,443.8 1394.5,443.8
+								1394.5,443.8 1394.5,421.8 1394.5,421.8
+								1394.5,421.8 1398.5,421.8 1398.5,421.8 Z
+								M 1398.5,423.79
+								C 1398.5,423.79 1398.5,461.85 1398.5,461.85
+								1398.5,461.85 1401.5,461.85 1401.5,461.85
+								1401.5,461.85 1396.5,479.15 1396.5,479.15
+								1396.5,479.15 1391.5,461.85 1391.5,461.85
+								1391.5,461.85 1394.5,461.85 1394.5,461.85
+								1394.5,461.85 1394.5,423.79 1394.5,423.79
+								1394.5,423.79 1398.5,423.79 1398.5,423.79 Z" />
+					</svg></p>
+				<h2>3.Werkzeug - 55°-Platte - <mark class="setting" data-target="i145SpOri">Werkzeug bei 240°-Ausrichtung</mark></h2>
+				<p><mark class="setting" data-target="i145Ori">Hauptspindel-Ausrichtung</mark>
+					<svg width="1904" height="722">
+						<image xlink:href="../img/145FlashTool3Standard.png" />
+						<rect class="SvgS" id="i145MeasureOri" x="559" y="168" width="230" height="147" />
+						<rect class="SvgS" id="i145Ori" x="572" y="198" width="71" height="19" />
+						<rect class="SvgS" id="i145SlopeAng" x="572" y="230" width="203" height="26" />
+						<rect class="SvgS" id="i145SpOri" x="572" y="265" width="203" height="26" />
+						<path class="SvgR" id="i145HomePos"
+							d="M 1400.5,420.5
+								C 1400.5,423.26 1398.26,425.5 1395.5,425.5
+								1392.74,425.5 1390.5,423.26 1390.5,420.5
+								1390.5,417.74 1392.74,415.5 1395.5,415.5
+								1398.26,415.5 1400.5,417.74 1400.5,420.5 Z
+								M 1400.5,418.5
+								C 1400.5,418.5 1444.5,418.5 1444.5,418.5
+								1444.5,418.5 1444.5,415.5 1444.5,415.5
+								1444.5,415.5 1464.5,420.5 1464.5,420.5
+								1464.5,420.5 1444.5,425.5 1444.5,425.5
+								1444.5,425.5 1444.5,422.5 1444.5,422.5
+								1444.5,422.5 1400.5,422.5 1400.5,422.5
+								1400.5,422.5 1400.5,418.5 1400.5,418.5 Z
+								M 1397.5,418.2
+								C 1397.5,418.2 1397.5,396.2 1397.5,396.2
+								1397.5,396.2 1400.5,396.2 1400.5,396.2
+								1400.5,396.2 1395.5,386.2 1395.5,386.2
+								1395.5,386.2 1390.5,396.2 1390.5,396.2
+								1390.5,396.2 1393.5,396.2 1393.5,396.2
+								1393.5,396.2 1393.5,418.2 1393.5,418.2
+								1393.5,418.2 1397.5,418.2 1397.5,418.2 Z
+								M 1397.5,424.79
+								C 1397.5,424.79 1397.5,462.85 1397.5,462.85
+								1397.5,462.85 1400.5,462.85 1400.5,462.85
+								1400.5,462.85 1395.5,480.15 1395.5,480.15
+								1395.5,480.15 1390.5,462.85 1390.5,462.85
+								1390.5,462.85 1393.5,462.85 1393.5,462.85
+								1393.5,462.85 1393.5,424.79 1393.5,424.79
+								1393.5,424.79 1397.5,424.79 1397.5,424.79 Z" />
+					</svg></p>
+				<p><mark class="setting" data-target="i146Ori">Gegenspindel-Ausrichtung</mark>
+					<svg width="1904" height="722">
+						<image xlink:href="../img/146FlashTool3ReversedForSub.png" />
+						<rect class="SvgS" id="i146MeasureOri" x="559" y="168" width="230" height="147" />
+						<rect class="SvgS" id="i146Ori" x="572" y="198" width="71" height="19" />
+						<rect class="SvgS" id="i146SlopeAng" x="572" y="230" width="203" height="26" />
+						<rect class="SvgS" id="i146SpOri" x="572" y="265" width="203" height="26" />
+						<path class="SvgR" id="i146HomePos"
+							d="M 1400.5,420.5
+								C 1400.5,417.74 1398.26,415.5 1395.5,415.5
+								1392.74,415.5 1390.5,417.74 1390.5,420.5
+								1390.5,423.26 1392.74,425.5 1395.5,425.5
+								1398.26,425.5 1400.5,423.26 1400.5,420.5 Z
+								M 1400.5,422.5
+								C 1400.5,422.5 1444.5,422.5 1444.5,422.5
+								1444.5,422.5 1444.5,425.5 1444.5,425.5
+								1444.5,425.5 1464.5,420.5 1464.5,420.5
+								1464.5,420.5 1444.5,415.5 1444.5,415.5
+								1444.5,415.5 1444.5,418.5 1444.5,418.5
+								1444.5,418.5 1400.5,418.5 1400.5,418.5
+								1400.5,418.5 1400.5,422.5 1400.5,422.5 Z
+								M 1397.5,422.8
+								C 1397.5,422.8 1397.5,444.8 1397.5,444.8
+								1397.5,444.8 1400.5,444.8 1400.5,444.8
+								1400.5,444.8 1395.5,454.8 1395.5,454.8
+								1395.5,454.8 1390.5,444.8 1390.5,444.8
+								1390.5,444.8 1393.5,444.8 1393.5,444.8
+								1393.5,444.8 1393.5,422.8 1393.5,422.8
+								1393.5,422.8 1397.5,422.8 1397.5,422.8 Z
+								M 1397.5,416.21
+								C 1397.5,416.21 1397.5,378.15 1397.5,378.15
+								1397.5,378.15 1400.5,378.15 1400.5,378.15
+								1400.5,378.15 1395.5,360.85 1395.5,360.85
+								1395.5,360.85 1390.5,378.15 1390.5,378.15
+								1390.5,378.15 1393.5,378.15 1393.5,378.15
+								1393.5,378.15 1393.5,416.21 1393.5,416.21
+								1393.5,416.21 1397.5,416.21 1397.5,416.21 Z" />
+					</svg></p>
+			</article>
+		</main>
+		<nav class="TOC">
+			<a href="../main.html"><b>Start</b></a><br>
+			<ul><li><a href="tool_predefinitions.html" title="Enthält allgemeine Informationen zu den vordefinierbaren Werten">Vordefinition von Dreh-Werkzeugen</a>
+					<ul><li><a href="tool_slope.html" title="Erläutert die, für die Werkzeugausrichtung im Schwenkkopf, nötigen Werte">Werkzeug-Ausrichtung <b>B-Achse</b></a></li>
+							<ul><li><a href="example_tool_slope.html" title="Beispiele für verschiedene Werkzeugausrichtungen">Beispiel: Werkzeug-Ausrichtung</a></li>
+								<li><a class="curr">Beispiel: Flash-Tools</a></li></ul></li>
+						<li><a href="turret_tool_ori.html" title="Erläutert die, für die Werkzeugausrichtung im Revolver, nötigen Werte">Werkzeug-Ausrichtung <b>Revolver</b></a></li>
+						<li><a href="nose_points.html" title="Erläutert die Varianten der Schneiden-Nullpunkt-Definition">Schneiden-Nullpunkt</a></li></ul>
+				<li><a href="converted_CAM_parts.html" title="Erklärt notwendige Änderungen in der Werkzeugverwaltung bei CAM-Teilen aus vorherigen CAM-Versionen">Konvertierte CAM-Teile</a></li></ul>
+		</nav>
+	</body>
+</html>
