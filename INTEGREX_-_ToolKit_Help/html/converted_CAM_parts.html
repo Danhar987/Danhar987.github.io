@@ -14,66 +14,18 @@
 		<main>
 			<article>
 				<h1>Anpassungen bei CAM-Teilen aus vorherigen Versionen</h1>
-				<p>Da sich mit der neuen Werkzeugverwaltung die Art der Werkzeugdefinition geändert hat, muss nach der konvertierung bestehender CAM-Teile jeweil die Werkzeugtabelle überprüft und ggf. korrigiert werden.</p>
-				<h2>B-Achs-Werkzeuge</h2>
-				<p>Nach der Konvertierung von CAM-Teilen aus vorherigen Versionen werden Werkzeuge, die mit mehreren Korrekturen oder verschiedenen Ausrichtungen angelegt wurden, als Mehrfach-Werkzeuge – d.h. als <mark class="result" data-target="i01Multi">verschiedene Werkzeuge auf demselben Platz</mark> – aufgelistet.<br>
-					<svg width="844" height="724">
-						<image xlink:href="../img/01ConvertedToolTable.png" />
-						<rect class="SvgR" id="i01Multi" x="87" y="337" width="188" height="189" />
-					</svg>
-				</p>
-				<p>Die neue Werkzeugverwaltung bietet eine Möglichkeit, die Werkzeuge automatisch zu korrigieren. Dazu wird in der Menüleiste <mark class="target" data-target="i02Edit">Bearbeiten</mark> &rAarr; <mark class="target" data-target="i02Optimize">Werkzeuge optimieren</mark> angewählt.<br>
-					<svg width="844" height="724">
-						<image xlink:href="../img/02OptimizeToolsSelection.png" />
-						<rect class="SvgT" id="i02Edit" x="42" y="31" width="70" height="19" />
-						<rect class="SvgT" id="i02Optimize" x="43" y="101" width="203" height="27" />
-					</svg>
-				</p>
-				<p>Im folgenden Fenster kann – für jede erkannte Werkzeugpaarung separat – entschieden werden, wie die Werkzeugpaare korrigiert werden sollen.<br>
-					<ul>
-						<li><mark class="setting" data-target="i03Multi">Als Mehrfachwerkzeug behalten</mark>: Die Option nimmt keine Änderung an der Art des Werkzeugpaares vor. Diese Option ist beispielsweise zu verwenden, wenn verschiedene Werkzeuge in einem Mehrfach-Halter gespannt sind.</li>
-						<li><mark class="setting" data-target="i03Separate">Separate Werkzeuge erstellen</mark>: Die Option macht aus der Werkzeugpaarung einzelne Werkzeuge mit jeweils einer eigenen Werkzeugnummer.<br>
-							Dabei ist zu beachten, dass ein Werkzeug die ursprüngliche Werkzeugnummer behält und für die anderen die jeweils niedrigste freie Werkzeugnummer verwendet wird. Ist von mehreren Werkzeugen mit derselben Nummer nur eins in Verwendung, behält dieses die ursprüngliche Werkzeugnummer.</li>
-						<li><mark class="setting" data-target="i03Same">Gleiches Werkzeug mit mehreren Schneidenlagen</mark>: Diese Option ist die wahrscheinlich meist zutreffende Funktion, mit der aus den Werkzeugpaaren ein Werkzeug mit 2 – ggf. auch mehr – Schneidenpunkten erzeugt wird.</li>
-					</ul>
-					<svg width="665" height="404">
-						<image xlink:href="../img/03OptimizeToolsOptions.png" />
-						<rect class="SvgS" id="i03Multi" x="343" y="58" width="173" height="17" />
-						<rect class="SvgS" id="i03Separate" x="343" y="81" width="165" height="17" />
-						<rect class="SvgS" id="i03Same" x="343" y="102" width="288" height="32" />
-					</svg>
-				</p>
-				Nach einer Optimierung mit <mark>Same Tool with new Cutting Point</mark> wird im <mark class="result" data-target="i04Assembly">Komplettwerkzeug-Aufbau</mark> aus mehreren Werkzeugen auf einem Werkzeugplatz <mark class="result" data-target="i04CutPnt">ein Werkzeug mit 2 Schneidenpunkten</mark> (in diesem Fall mit „Schneidenlage“ und „Schneidenlage_1“ benannt).<br>
-				In der <mark class="result" data-target="i04TList">Werkzeugliste</mark> werden jetzt für diese Werkzeuge <mark class="result" data-target="i04TCompIdx">Werkzeugkorrekturnummer und Werkzeugkorrekturindex</mark> in Klammern hinter der Werkzeugnummer angezeigt.<br>
-				<svg width="844" height="724">
-					<image xlink:href="../img/04ToolWithCuttingPoints.png" />
-					<rect class="SvgR" id="i04TList" x="85" y="98" width="192" height="233" />
-					<rect class="SvgR" id="i04TCompIdx" x="114" y="152" width="39" height="39" />
-					<rect class="SvgR" id="i04Assembly" x="85" y="335" width="192" height="347" />
-					<rect class="SvgR" id="i04CutPnt" x="88" y="338" width="186" height="116" />
-				</svg>
-				<hr>
-				<h2>Revolver-Werkzeuge</h2>
-				<p>Speziell für die um X rotierende Revolver der INTEGREX ST-Maschinen und die damit mögliche Ausrichtung des selben Werkzeugedwar für Haupt- und Gegenspindel, machten in Verbindung mit der neuen Werkzeugverwaltung eine Korrektur der Maschinen-ID (VMID) notwendig.<br>
-					Dadurch bedingt sind die Revolver-Werkzeuge konvertierter CAM-Teilen <mark class="result" data-target="i201HolderRotated">um 180°</mark> rotiert ausgerichtet.<br>
-					<svg width="1588" height="712">
-						<image xlink:href="../img/201TurretToolStationDirection.png" />
-						<rect class="SvgR" id="i201HolderRotated" x="971" y="81" width="607" height="503" />
-					</svg>
-				</p>
-				<p>Um das zu korrigieren muss lediglich bei der jeweils <mark class="target" data-target="i202Holder">obersten Komponente</mark> auf dem jeweiligen Werkzeugplatz beim <mark class="target" data-target="i202Joint">Verbindungspunkt</mark> die <mark class="setting" data-target="i202RotZ">Drehung um Z</mark> um 180° korigiert werden.</p>
-					<svg width="1588" height="712">
-						<image xlink:href="../img/202TurretToolCorrected.png" />
-						<rect class="SvgT" id="i202Holder" x="119" y="469" width="178" height="27" />
-						<rect class="SvgT" id="i202Joint" x="912" y="191" width="41" height="39" />
-						<rect class="SvgS" id="i202RotZ" x="616" y="193" width="94" height="24" />
-					</svg>
+				<p>Da sich mit der, mit SolidCAM 2021 eingeführten neuen Werkzeugverwaltung, die Art der Werkzeugdefinition geändert hat, muss nach der Konvertierung eines CAM-Teiles aus SolidCAM 2020 oder älter, die Werkzeugtabelle überprüft und ggf. korrigiert werden.</p>
 			</article>
 		</main>
 		<nav class="TOC">
 			<a href="../help_de.html"><b>Start</b></a><br>
 			<ul><li><a href="tool_predefinitions.html" title="Enthält allgemeine Informationen zu den vordefinierbaren Werten">Vordefinition von Dreh-Werkzeugen</a>
-				<li><a class="curr">Konvertierte CAM-Teile</a></li></ul>
+				<li><a class="curr">Konvertierte CAM-Teile</a>
+					<ul>
+						<li><a href="converted_CAM_parts_HD1.html" title="Erklärt notwendige Änderungen in der Werkzeugverwaltung für B-Achs-Werkzeuge">Konvertierte B-Achs-Werkzeuge</a></li>
+						<li><a href="converted_CAM_parts_HD2.html" title="Erklärt notwendige Änderungen in der Werkzeugverwaltung für Revolver-Werkzeuge">Konvertierte Revolver-Werkzeuge</a></li>
+					</ul>
+				</li></ul>
 		</nav>
 	</body>
 </html>

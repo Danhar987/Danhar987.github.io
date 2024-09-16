@@ -1,0 +1,44 @@
+<html lang="de">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<title>Anpassungen in der Werkzeugverwaltung bei konvertierten CAM-Teilen</title>
+		<link href="../css/Style.css" rel="stylesheet">
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- <script src="../js/main.js" async></script> -->
+		<script src="https://danhar987.github.io/WordToSVGLink.js" async></script>
+		<header>
+			<p id="top">Werkzeugverwaltung - Besonderheiten bei Postprozessoren für die Mazak INTEGREX-Serie</p>
+		</header>
+		<main>
+			<article>
+				<h1>Anpassung konvertierter Revolver-Werkzeuge</h1>
+				<p>Speziell für um X rotierende Revolver der INTEGREX ST-Maschinen und die damit mögliche Ausrichtung des selben Werkzeugedwar für Haupt- und Gegenspindel, machten in Verbindung mit der neuen Werkzeugverwaltung eine Korrektur der Maschinen-ID (VMID) notwendig.<br>
+					Dadurch bedingt sind die Revolver-Werkzeuge konvertierter CAM-Teilen <mark class="result" data-target="i201HolderRotated">um 180°</mark> rotiert ausgerichtet.<br>
+					<svg width="1588" height="712">
+						<image xlink:href="../img/201TurretToolStationDirection.png" />
+						<rect class="SvgR" id="i201HolderRotated" x="971" y="81" width="607" height="503" />
+					</svg>
+				</p>
+				<p>Um das zu korrigieren muss lediglich bei der jeweils <mark class="target" data-target="i202Holder">obersten Komponente</mark> auf dem jeweiligen Werkzeugplatz beim <mark class="target" data-target="i202Joint">Verbindungspunkt</mark> die <mark class="setting" data-target="i202RotZ">Drehung um Z</mark> um 180° korigiert werden.</p>
+					<svg width="1588" height="712">
+						<image xlink:href="../img/202TurretToolCorrected.png" />
+						<rect class="SvgT" id="i202Holder" x="119" y="469" width="178" height="27" />
+						<rect class="SvgT" id="i202Joint" x="912" y="191" width="41" height="39" />
+						<rect class="SvgS" id="i202RotZ" x="616" y="193" width="94" height="24" />
+					</svg>
+			</article>
+		</main>
+		<nav class="TOC">
+			<a href="../help_de.html"><b>Start</b></a><br>
+			<ul><li><a href="tool_predefinitions.html" title="Enthält allgemeine Informationen zu den vordefinierbaren Werten">Vordefinition von Dreh-Werkzeugen</a>
+				<li><a href="converted_CAM_parts.html" title="Erklärt notwendige Änderungen in der Werkzeugverwaltung bei CAM-Teilen aus vorherigen CAM-Versionen">Konvertierte CAM-Teile</a>
+					<ul>
+						<li><a href="converted_CAM_parts_HD1.html" title="Erklärt notwendige Änderungen in der Werkzeugverwaltung für B-Achs-Werkzeuge">Konvertierte B-Achs-Werkzeuge</a></li>
+						<li><a class="curr">Konvertierte Revolver-Werkzeuge</a></li>
+					</ul>
+				</li></ul>
+		</nav>
+	</body>
+</html>

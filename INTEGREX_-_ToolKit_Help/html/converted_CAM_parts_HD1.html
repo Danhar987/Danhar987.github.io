@@ -1,0 +1,71 @@
+<html lang="de">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<title>Anpassungen in der Werkzeugverwaltung bei konvertierten CAM-Teilen</title>
+		<link href="../css/Style.css" rel="stylesheet">
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- <script src="../js/main.js" async></script> -->
+		<script src="https://danhar987.github.io/WordToSVGLink.js" async></script>
+		<header>
+			<p id="top">Werkzeugverwaltung - Besonderheiten bei Postprozessoren für die Mazak INTEGREX-Serie</p>
+		</header>
+		<main>
+			<article>
+				<h1>Anpassung konvertierter B-Achs-Werkzeuge</h1>
+				<p>Nach der Konvertierung von CAM-Teilen aus vorherigen Versionen werden Werkzeuge, die mit mehreren Korrekturen oder verschiedenen Ausrichtungen angelegt wurden, als verschiedene Werkzeuge auf demselben Platz dargestellt.<br>
+					Ein Dreh-Werkzeug, dass für die Bearbeitung an beiden Spindeln angelegt wurde, wird daher für die <mark class="result" data-target="i01MultiMain">Hauptspindel</mark> und die <mark class="result" data-target="i01MultiSub">Gegenspindel</mark>, in den beiden Ausrichtungen übereinandergeblendet.
+					<svg width="1348" height="570">
+						<image xlink:href="../img/01ConvertedToolTable.png" />
+						<path class="SvgR" id="i01MultiMain"
+							d="M 124,295 H 329 V 387 H 124 V 295 Z
+								M 966,232 H 1217 V 252 H 1316 V 356 H 1212 V 337 H 1134 L 1062,300 V 284 H 971 L 966,232 Z"/>
+						<path class="SvgR" id="i01MultiSub"
+							d="M 149,409 H 352 V 502 H 149 V 409 Z
+								M 966,378 H 1217 V 356 H 1316 V 252 H 1212 V 264 H 1134 L 1062,308 V 323 H 971 L 966,378 Z"/>
+					</svg>
+				</p>
+				<p>Um für eine korrekte Werkzeugdarstellung den Aufwand so gering wie möglich zu halten können die betreffenden Werkzeuge folgendermaßen bearbeitet werden:
+					<ul>
+						<li>Im ersten Schritt sollte die <mark class="setting" data-target="i02Base">Schneidplatte</mark> auf den <mark class="target" data-target="i02Target">oberen Halter </mark>verschoben werden.<br>
+							<svg width="920" height="570">
+								<image xlink:href="../img/02ToolAdjStep1.png" />
+								<rect class="SvgS" id="i02Base" x="196" y="457" width="132" height="23" />
+								<rect class="SvgT" id="i02Target" x="167" y="317" width="96" height="29" />
+							</svg>
+						</li>
+						<li>Anschließend kann das nicht mehr benötigte <mark class="setting" data-target="i03ToolComponent">Werkzeug</mark> angewählt und gelöscht werden. Das ist wahlweise über <mark class="setting" data-target="i03Delete">Löschen</mark> im Kontext-Menü oder durch drücken der Entf-Taste möglich.<br>
+							Die dadurch folgenden Abfragen zum Löschen des Werkzeugeintrages und der Unterkomponenten müssen bestätigt werden.
+							<svg width="920" height="753">
+								<image xlink:href="../img/03ToolAdjStep2.png" />
+								<rect class="SvgS" id="i03ToolComponent" x="91" y="432" width="107" height="27" />
+								<rect class="SvgS" id="i03Delete" x="166" y="676" width="337" height="23" />
+							</svg>
+						</li>
+						<li>Nach der Bearbeitung des Werkzeuges ist nur noch ein Halter in der Werkzeugvorschau enthalten und für die einzelnen <mark class="result" data-target="i04Cuts">Schneidenpunkte</mark> kann abschließend die <a href="tool_slope.html">Werkzeug-Ausrichtung</a> definiert werden.<br>
+							<svg width="1348" height="570">
+								<image xlink:href="../img/04ToolAdjResult.png" />
+								<path class="SvgR" id="i04SingleHolder"
+									d="M 966,232 H 1217 V 252 H 1316 V 356 H 1212 V 337 H 1134 L 1062,300 V 284 H 971 L 966,232 Z"/>
+								<path class="SvgR" id="i04Cuts"
+									d="M 218,364 H 328 V 388 H 218 V 364 Z
+										M 218,410 H 328 V 434 H 218 V 410 Z" />
+							</svg>
+						</li>
+					</ul>
+				</p>
+			</article>
+		</main>
+		<nav class="TOC">
+			<a href="../help_de.html"><b>Start</b></a><br>
+			<ul><li><a href="tool_predefinitions.html" title="Enthält allgemeine Informationen zu den vordefinierbaren Werten">Vordefinition von Dreh-Werkzeugen</a>
+				<li><a href="converted_CAM_parts.html" title="Erklärt notwendige Änderungen in der Werkzeugverwaltung bei CAM-Teilen aus vorherigen CAM-Versionen">Konvertierte CAM-Teile</a>
+					<ul>
+						<li><a class="curr">Konvertierte B-Achs-Werkzeuge</a></li>
+						<li><a href="converted_CAM_parts_HD2.html" title="Erklärt notwendige Änderungen in der Werkzeugverwaltung für Revolver-Werkzeuge">Konvertierte Revolver-Werkzeuge</a></li>
+					</ul>
+				</li></ul>
+		</nav>
+	</body>
+</html>

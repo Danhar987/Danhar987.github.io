@@ -1,6 +1,6 @@
 /*---------------------------------------------
-  global settings
-  ---------------------------------------------*/
+global settings
+---------------------------------------------*/
 body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.5em; margin: 0 0 0 0;}
 header {position: sticky; top: 0; text-align: center; font-size: 1.6em; font-weight: bold; line-height: 0.6em; padding-top: 0.05em; padding-bottom: 0.05em; background-color: rgb(0, 10, 146); color:rgb(255, 255, 255);}
 main {position:static; margin: 0em 6em 0em 12em; min-width: 1040;}
@@ -13,8 +13,8 @@ nav.TOCmain {font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
 a {color: rgb(0, 0, 185);}
 a:hover {color:rgb(0, 119, 255);}
 
-nav a {color: #707070; text-decoration: none;}
-nav a.curr {color: #0000a0; text-decoration: underline; cursor: default;}
+nav a {color: #505080; text-decoration: underline;}
+nav a.curr {color: #0000a0; text-decoration:none; font-weight: bold; cursor: default;}
 nav ul {list-style-type: none; padding-bottom: 0.5em;}
 nav li {padding-top: 0.8em;}
 nav.TOCmain ul {padding-left: 2em;}
